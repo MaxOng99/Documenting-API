@@ -10,40 +10,16 @@
 		<h1>University Room API</h1>
 	</header>
 	<nav>
-		<article>
-			<h2>Introduction</h2>
-			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>	
-			</ul>
-		</article>
-
-		<article>
+		<section>
 			<h2>API Endpoints</h2>
-
-			<!--
-			<ul>
-				<li><a href="#home">Home</a>
-					<ul>
-						<li>Get available endpoints</li>
-						<li>Get acceptable content types</li>
-					</ul>
-				</li>
-			</ul>
-			-->
 			<ul>
 				<li><a href="#rooms">Rooms</a>
 					<ul>
 						<li><a href="#get-room">Get room</a></li>
 						<li><a href="#get-room-list">Get list of rooms</a></li>
 						<li><a href="#post-room">Create new room</a></li>
-						<li><a href="#update-room">Update room information: [PATCH and PUT]</a></li>
+						<li><a href="#update-room">Update room information</a></li>
 						<li><a href="#delete-room">Remove room</a></li>
-						<li><a href="#option-content-room">Accepted content types</a></li>
 					</ul>
 				</li>
 				<li><a href="#buildings">Buildings</a>
@@ -52,11 +28,8 @@
 						<li><a href="#get-building-list">Get list of buildings</a></li>
 						<li><a href="#get-building-rooms-list">Get list of rooms in a building</a></li>
 						<li><a href="#post-building">Create new building</a></li>
-						<li><a href="#update-building">Update building information: [PATCH and PUT]</a></li>
-						<li><a href="#option-action-building">Update instructions: [Link to PUT and PATCH endpoints]</a></li>
+						<li><a href="#update-building">Update building information</a></li>
 						<li><a href="#delete-building">Remove building</a></li>
-						<li><a href="#option-content-building">Accepted content types</a></li>
-						
 					</ul>
 				</li>
 				<li><a href="#sites">Sites</a>
@@ -65,16 +38,20 @@
 						<li><a href="#get-site-list">Get list of sites</a></li>
 						<li><a href="#get-site-buildings-list">Get list of buildings in a site</a></li>
 						<li><a href="#post-site">Create new site</a></li>
-						<li><a href="#update-site">Update site information: [PATCH and PUT]</a></li>
-						<li><a href="#option-action-site">Update instructions: [Link to PUT and PATCH endpoints]</a></li>
+						<li><a href="#update-site">Update site information</a></li>
 						<li><a href="#delete-site">Remove site</a></li>
-						<li><a href="#option-content-site">Accepted content types</a></li>
+					</ul>
+				</li>
+				<li><a href="#misc">Miscellaneous</a>
+					<ul>
+						<li><a href="#option-content">Accepted content types</a></li>
+						<li><a href="#option-action">Update resource information</a></li>
 					</ul>
 				</li>
 			</ul>
-		</article>
+		</section>
 
-		<article>
+		<section>
 			<h2>Debugging Errors</h2>
 			<ul>
 				<li></li>
@@ -84,31 +61,15 @@
 				<li></li>
 				<li></li>	
 			</ul>
-		</article>
+		</section >
 
 	</nav>
 
 	<main>
 		<article>
-
-			<header>
-				<h2>Introduction to Room API</h2>
-			</header>
-		</article>
-
-
-		<article>
 			<header>
 				<h2>API Endpoints</h2>
 			</header>
-
-			<!--
-			<section id="home">
-				<header>
-					<h3>Get available endpoints</h3>
-				</header>
-			</section>	
-			-->
 
 			<section id="rooms">
 
@@ -486,81 +447,6 @@
 					</div>
 				</section>
 
-				<section class="subsection">
-					<header>
-						<h3 id="option-content-room">Accepted content types</h3>
-						<p>Returns the formats of the request body accepted by the server and the formats of the response body that is used to serve up the clients for room resources.</p>
-						
-					</header>
-
-					<section class="subsubsection">
-						<p><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/</code></p>
-						<p>Returns the accepted content types for a single room resource</p>
-					</section>
-
-					<section class="subsubsection">
-						<p><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
-						<p>Returns the accepted content types for the list of room resource</p>
-
-						<figure>
-							<figcaption>URL Parameters</figcaption>
-							<table>
-								<tr>
-								    <th>Parameter</th>
-								    <th>Type</th>
-								    <th>Description</th>
-						  		</tr>
-							  	<tr>
-								    <td>room_id</td>
-								    <td>integer</td>
-								    <td>Unique id for this room</td>
-							  	</tr>
-							</table>	
-						</figure>
-
-					</section>
-
-					<p>Both of these endpoints have the following request body and response body</p>
-
-					<figure>
-							<figcaption>Request Body</figcaption>
-							<table></table>
-						</figure>
-
-					<figure>
-						<figcaption>Response Body</figcaption>
-						<table>
-  							<tr>
-							    <th>Field</th>
-							    <th>Type</th>
-							    <th>Description</th>
-					  		</tr>
-						  	<tr>
-							    <td>name</td>
-							    <td>string</td>
-							    <td>The resource in which the returned accepted content types applies to. In this case, it is the room resources</td>
-						  	</tr>
-						  	<tr>
-							    <td>description</td>
-							    <td>string</td>
-							    <td>N/A</td>
-						  	</tr>
-						  	<tr>
-							    <td>renders</td>
-							    <td>[string]</td>
-							    <td>Lists the supported body format that can be used by the client to render the response</td>
-						  	</tr>
-						  	<tr>
-							    <td>parses</td>
-							    <td>[string]</td>
-							    <td>Lists the accepted body format that must be used by the client when sending information in a request body</td>
-						  	</tr>
-						</table>
-					</figure>
-				
-
-			</section>	
-
 			<section id="buildings">
 				<header>
 					<h2>Buildings</h2>
@@ -725,7 +611,68 @@
 				<section class="subsection">
 					<header>
 						<h3 id="get-building-rooms-list">Get list of rooms in a building</h3>
+						<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}/rooms</code></p>
+						<p>Returns the list of rooms located within a specific building</p>
 					</header>
+
+					<figure>
+							<figcaption>URL Parameters</figcaption>
+							<table>
+								<tr>
+								    <th>Parameters</th>
+								    <th>Type</th>
+								    <th>Description</th>
+						  		</tr>
+							  	<tr>
+								    <td>building_id</td>
+								    <td>integer</td>
+								    <td>Unique id for a building</td>
+							  	</tr>
+							</table>
+					</figure>
+
+					<figure>
+						<figcaption>Request Body</figcaption>
+						<table></table>
+					</figure>
+
+
+					<p>The response will be a list of rooms, each with the following fields</p>
+					<figure>
+							<figcaption>Response Body</figcaption>
+							<table>
+	  							<tr>
+								    <th>Field</th>
+								    <th>Type</th>
+								    <th>Description</th>
+						  		</tr>
+							  	<tr>
+								    <td>url</td>
+								    <td>string</td>
+								    <td>URL for this room</td>
+							  	</tr>
+							  	<tr>
+								    <td>number</td>
+								    <td>string</td>
+								    <td>Identifier for this room</td>
+							  	</tr>
+							  	<tr>
+								    <td>description</td>
+								    <td>string</td>
+								    <td>Describes the functionality and usage of the room</td>
+							  	</tr>
+							  	<tr>
+								    <td>capacity</td>
+								    <td>integer</td>
+								    <td>Maximum number of people in a room</td>
+							  	</tr>
+							  	<tr>
+								    <td>building</td>
+								    <td>string</td>
+								    <td>Building URL in which this room is located in</td>
+							  	</tr>
+							</table>
+						</figure>
 				</section>
 
 
@@ -970,12 +917,6 @@
 
 				<section class="subsection">
 					<header>
-						<h3 id="option-action-building">Update instructions</h3>
-					</header>
-				</section>
-
-				<section class="subsection">
-					<header>
 						<h3 id="delete-building">Remove building</h3>
 						<p><code>DELETE</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{buildings_id}</code></p>
 						<p>Remove a building</p>
@@ -1014,79 +955,6 @@
 						
 					</div>
 				</section>
-
-				<section class="subsection">
-					<header>
-						<h3 id="option-content-building">Accepted content types</h3>
-						<p>Returns the formats of the request body accepted by the server and the formats of the response body that is used to serve up the clients for building resources.</p>
-					</header>
-
-					<section class="subsubsection">
-						<p><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/</code></p>
-						<p>Returns the accepted content types for a single building resource</p>
-					</section>
-
-					<section class="subsubsection">
-						<p><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></p>
-						<p>Returns the accepted content types for the list of building resource</p>
-
-						<figure>
-							<figcaption>URL Parameters</figcaption>
-							<table>
-								<tr>
-								    <th>Parameter</th>
-								    <th>Type</th>
-								    <th>Description</th>
-						  		</tr>
-							  	<tr>
-								    <td>building_id</td>
-								    <td>integer</td>
-								    <td>Unique id for this building</td>
-							  	</tr>
-							</table>	
-						</figure>
-
-					</section>
-
-					<p>Both of these endpoints have the following request body and response body</p>
-
-					<figure>
-							<figcaption>Request Body</figcaption>
-							<table></table>
-						</figure>
-
-					<figure>
-						<figcaption>Response Body</figcaption>
-						<table>
-  							<tr>
-							    <th>Field</th>
-							    <th>Type</th>
-							    <th>Description</th>
-					  		</tr>
-						  	<tr>
-							    <td>name</td>
-							    <td>string</td>
-							    <td>The resource in which the returned accepted content types applies to. In this case, it is the building resources</td>
-						  	</tr>
-						  	<tr>
-							    <td>description</td>
-							    <td>string</td>
-							    <td>N/A</td>
-						  	</tr>
-						  	<tr>
-							    <td>renders</td>
-							    <td>[string]</td>
-							    <td>Lists the supported body format that can be used by the client to render the response</td>
-						  	</tr>
-						  	<tr>
-							    <td>parses</td>
-							    <td>[string]</td>
-							    <td>Lists the accepted body format that must be used by the client when sending information in a request body</td>
-						  	</tr>
-						</table>
-					</figure>
-				</section>
-
 			</section>	
 
 			<section id="sites">
@@ -1228,7 +1096,47 @@
 				<section class="subsection">
 					<header>
 						<h3 id="get-site-buildings-list">Get list of buildings in a site</h3>
+						<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}/buildings</code></p>
+						<p>Returns the list of buildings located within a specific site</p>
 					</header>
+
+					<figure>
+							<figcaption>Response Body</figcaption>
+							<p>The response will be a list of buildings, each with the following fields:</p>
+
+							<table>
+	  							<tr>
+								    <th>Field</th>
+								    <th>Type</th>
+								    <th>Description</th>
+						  		</tr>
+							  	<tr>
+								    <td>url</td>
+								    <td>field</td>
+								    <td>URL for this building</td>
+							  	</tr>
+							  	<tr>
+								    <td>name</td>
+								    <td>string</td>
+								    <td>Name of the building</td>
+							  	</tr>
+							  	<tr>
+								    <td>number</td>
+								    <td>string</td>
+								    <td>Identifier for this building</td>
+							  	</tr>
+							  	<tr>
+								    <td>latitude</td>
+								    <td>decimal</td>
+								    <td>Latitude of this building</td>
+							  	</tr>
+							  	<tr>
+								    <td>longitude</td>
+								    <td>decimal</td>
+								    <td>Longitude of this building</td>
+							  	</tr>
+							</table>
+						</figure>
 				</section>
 
 				<section class="subsection">
@@ -1418,12 +1326,6 @@
 
 				<section class="subsection">
 					<header>
-						<h3 id="option-action-site">Update instructions</h3>
-					</header>
-				</section>
-
-				<section class="subsection">
-					<header>
 						<h3 id="delete-site">Delete site</h3>
 						<p><code>DELETE</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
 						<p>Delete a site</p>
@@ -1462,15 +1364,97 @@
 						
 					</div>
 				</section>
+				
+			</section>	
+
+			<section>
+				<header>
+					<h2 id="misc">Miscellaneous</h2>
+				</header>
 
 				<section class="subsection">
 					<header>
-						<h3 id="option-content-site">Accepted content types</h3>
+						<h3 id="option-content">Accepted Content Types</h3>
 					</header>
+
+					<p>For each type of resource (room, building or site), the content type for both the request and response body are the same: <code>application/xml</code>, <code>application/json</code> for parsing at the server side, and <code>application/xml</code>, <code>application/json</code>, <code>text/csv</code> for rendering at the client side.</p>
+
+					<p>The following API endpoints can be used as a reference to obtain the accepted content types for the different type of resources</p>
+					<ul>
+						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/</code></li>
+						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></li>
+						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/</code></li>
+						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></li>
+						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}/rooms</code></li>
+						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites</code></li>
+						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></li>
+						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{site_id}/buildings</code></li>
+					</ul>
+					<!--
+					<table>
+  							<tr>
+							    <th>Endpoint</th>
+							    <th>Resource</th>
+					  		</tr>
+						  	<tr>
+							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/</code></td>
+							    <td>List of rooms</td>
+						  	</tr>
+						  	<tr>
+							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></td>
+							    <td>A specific room</td>
+						  	</tr>
+						  	<tr>
+							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/</code></td>
+							    <td>List of buildings</td>
+						  	</tr>
+						  	<tr>
+							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></td>
+							    <td>A specific building</td>
+						  	</tr>
+						  	<tr>
+							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}/rooms</code></td>
+							    <td>List of rooms in a building</td>
+						  	</tr>
+						  	<tr>
+							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites</code></td>
+							    <td>List of sites</td>
+						  	</tr>
+						  	<tr>
+							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></td>
+							    <td>A specific site</td>
+						  	</tr>
+						  	<tr>
+							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{site_id}/buildings</td>
+							    <td>List of buildings in a site</td>
+						  	</tr>
+						</table>
+					-->
 				</section>
 
-				
-			</section>	
+				<section class="subsection">
+					<header>
+						<h3 id="option-action">Details on updating resources</h3>
+					</header>
+
+					<p>The following API endpoints can be used as a reference to obtain further information about the details of a request body while sending <code>PUT</code> or <code>PATCH</code> requests to the server for updating building and site resources. This information can be found in the <code>actions</code> key/element in each of the following endpoints' response body.</p>
+
+					<h4 id="update-building-details">Buildings</h4>
+					<ul>
+						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/</code></li>
+						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></li>
+					</ul>
+
+					<h4 id="update-site-details">Sites</h4>
+					<ul>
+						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites/</code></li>
+						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></li>
+					</ul>
+					<p>For each type of resource (room, building or site), the content type for both the request and response body are the same: <code>application/xml</code>, <code>application/json</code> for parsing at the server side, and <code>application/xml</code>, <code>application/json</code>, <code>text/csv</code> for rendering at the client side.</p>
+					
+				</section>
+
+			</section>
 		</article>
 		
 		<article>
