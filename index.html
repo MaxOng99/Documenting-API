@@ -91,6 +91,14 @@
 				</ul>
 			</li>
 		</ul>
+
+		<h2>Debugging Errors</h2>
+		<ul>
+			<li><a href="#400">400 Bad Request</a></li>
+			<li><a href="#401">403 Unauthorized</a></li>
+			<li><a href="#404">404 Not Found</a></li>
+			<li><a href="#405">405 Method Not Allowed</a></li>
+		</ul>
 	</nav>
 
 	<main>
@@ -1996,6 +2004,194 @@
 					</ul>
 				</section>
 
+			</section>
+		</article>
+
+		<article>
+			<header>
+				<h2>Debugging Errors</h2>
+			</header>
+
+			<section>
+				<header>
+					<h3 id="400">400 Bad Request</h3>
+				</header>
+
+				<section>
+					<header>
+						<p>Error Description</p>
+					</header>
+
+					<p>This error occurs while there is an incomplete request body or an invalid request body where the field type, field value or format of the request body is invalid. This applies to <code>POST</code>, <code>PUT</code> or <code>PATCH</code> requests when updating a resource.
+					<h4>Incomplete <code>PUT</code> request</h4>
+					<p>Check the Response Body for the relevant endpoint where it describes the required fields that is needed, and add any missing fields</p>
+
+					<h4>Invalid request</h4>
+					<p>Check the Request Body for the relevant endpoint where it describes the types and values of the request fields, and the format of the request body needed. Ensure that your request body conforms to the format described in the relevant endpoint</p>
+				</section>
+
+				<section>
+					<header>
+						<p>Example Errors</p>
+					</header>
+
+					<figure>
+						<figcaption>Incomplete Request Body</figcaption>
+						<pre>
+							400 Bad Request
+							{
+							    "building": [
+							        "This field is required."
+							    ],
+							    "capacity": [
+							        "This field is required."
+							    ],
+							    "number": [
+							        "This field is required."
+							    ],
+							    "description": [
+							        "This field is required."
+							    ]
+							}
+						</pre>
+					</figure>
+
+					<figure>
+						<figcaption>Invalid Request Body</figcaption>
+						<pre>
+							400 Bad Request
+
+							{
+							    "building": [
+							        "Incorrect type. Expected URL string, received int."
+							    ],
+							    "capacity": [
+							        "A valid integer is required."
+							    ]
+							}
+						</pre>
+
+						<pre>
+							400 Bad Request
+
+							{
+							    "building": [
+							        "Invalid hyperlink - No URL match."
+							    ]
+							}
+						</pre>
+					</figure>
+				</section>
+			</section>
+
+			<section>
+				<header>
+					<h3 id="401">401 Unauthorized</h3>
+				</header>
+
+				<section>
+					<header>
+						<p>Error Description</p>
+					</header>
+
+					<p>This error occurs when there is a missing authorization token in the request headers when performing requests changes the state of a given resource such as <code>POST</code>, <code>PUT</code>, <code>PATCH</code> and <code>DELETE</code>.</p>
+
+					<p>To fix this, simply add the following authorization header when creating, updating or deleting a resource:</p>
+
+					<p><code>Authorization: Token &lttoken_id&gt</code></p>
+				</section>
+
+				<section>
+					<header>
+						<p>Example Errors</p>
+					</header>
+					<figure>
+							<figcaption>Unauthorized Requests</figcaption>
+							<pre>
+								401 Unauthorized
+
+								{
+								    "detail": "Authentication credentials were not provided."
+								}
+							</pre>
+					</figure>
+				</section>
+
+			</section>
+
+			<section>
+				<header>
+					<h3 id="404">404 Not Found</h3>
+				</header>
+
+				<section>
+					<header>
+						<p>Error Description</p>
+					</header>
+
+					<p>This error occurs when invalid URL parameters are used or that the requested resource does not exist.</p>
+
+					<h4>Invalid URL Parameters</h4>
+					<p>For the relevant endpoint, check the type of URL parameters used or whether URL parameters should be used at all.</p>
+
+					<h4>Resource does not exist</h4>
+					<p>Ensure that the resource requested exists within the server.</p>
+
+				</section>
+
+				<section>
+					<header>
+						<p>Example Errors</p>
+					</header>
+					<figure>
+							<figcaption>Invalid URL Parameters</figcaption>
+							<pre>
+								404 Not Found
+
+								&lth1&gtNot Found&lt/h1&gt
+								&ltp&gtThe requested URL /rooms/inavalidparam was not found on this server. &lt/p&gt
+							</pre>
+					</figure>
+
+					<figure>
+							<figcaption>Resource does not exist</figcaption>
+							<pre>
+								404 Not Found
+
+								{
+								    "detail": "Not Found."
+								}
+							</pre>
+					</figure>
+				</section>
+			</section>
+
+			<section>
+				<header>
+					<h3 id="405">405 Method Not Allowed</h3>
+				</header>
+
+				<section>
+					<header>
+						<p>Error Description</p>
+					</header>
+
+					<p>This error occurs when the URL template for a request action on a specific endpoint is invalid. Ensure that all required URL parameters are provided for <code>PUT</code>, <code>PATCH</code> and <code>DELETE</code> requests.
+				</section>
+
+				<section>
+					<header>
+						<p>Example Errors</p>
+					</header>
+					<figure>
+							<figcaption>Invalid URL Parameters</figcaption>
+							<pre>
+								{
+								    "detail": "Method \"DELETE\" not allowed."
+								}
+							</pre>
+					</figure>
+				</section>
 			</section>
 		</article>
 		
