@@ -3,6 +3,49 @@
 <head>
 	<title>University Room API</title>
 	<meta charset="utf-8">
+
+	<script type="text/javascript">
+
+		
+		
+		/*
+		function changeExampleResponse(selector, codeBlockContainerId) {
+
+			var codeBlockContainer = document.getElementById(codeBlockContainerId);
+			currentExample = codeBlockContainer.firstChild;
+			codeBlockContainer.removeChild(currentExample);
+
+			var temp = document.getElementById(selector.value);
+			var newExample = document.createElement('pre');
+			newExample.innerHTML = temp.innerHTML;
+			codeBlockContainer.appendChild(newExample);
+		}
+
+
+		function init() {
+			var selectors = document.getElementsByTagName("select");
+			var codeBlockContainers = document.getElementsByClassName("example-response");
+
+			for (i = 0; i < selectors.length; i++) {
+				var selector = selectors[i];
+				var codeBlockContainer = codeBlockContainers[i];
+
+				for (j = 0; j < selector.options.length; j++) {
+					var codeBlock = document.getElementById(selector.options[j].value);
+					codeBlock.style.display = "none";
+				}
+
+				var codeBlock = document.getElementById(selector.value);
+				var temp = document.createElement('pre');
+				temp.innerHTML = codeBlock.innerHTML;
+				codeBlockContainer.appendChild(temp);
+			}
+		}
+
+		
+		*/
+
+	</script>
 </head>
 <body>
 
@@ -10,59 +53,44 @@
 		<h1>University Room API</h1>
 	</header>
 	<nav>
-		<section>
-			<h2>API Endpoints</h2>
-			<ul>
-				<li><a href="#rooms">Rooms</a>
-					<ul>
-						<li><a href="#get-room">Get room</a></li>
-						<li><a href="#get-room-list">Get list of rooms</a></li>
-						<li><a href="#post-room">Create new room</a></li>
-						<li><a href="#update-room">Update room information</a></li>
-						<li><a href="#delete-room">Remove room</a></li>
-					</ul>
-				</li>
-				<li><a href="#buildings">Buildings</a>
-					<ul>
-						<li><a href="#get-building">Get buildings</a></li>
-						<li><a href="#get-building-list">Get list of buildings</a></li>
-						<li><a href="#get-building-rooms-list">Get list of rooms in a building</a></li>
-						<li><a href="#post-building">Create new building</a></li>
-						<li><a href="#update-building">Update building information</a></li>
-						<li><a href="#delete-building">Remove building</a></li>
-					</ul>
-				</li>
-				<li><a href="#sites">Sites</a>
-					<ul>
-						<li><a href="#get-site">Get site</a></li>
-						<li><a href="#get-site-list">Get list of sites</a></li>
-						<li><a href="#get-site-buildings-list">Get list of buildings in a site</a></li>
-						<li><a href="#post-site">Create new site</a></li>
-						<li><a href="#update-site">Update site information</a></li>
-						<li><a href="#delete-site">Remove site</a></li>
-					</ul>
-				</li>
-				<li><a href="#misc">Miscellaneous</a>
-					<ul>
-						<li><a href="#option-content">Accepted content types</a></li>
-						<li><a href="#option-action">Update resource information</a></li>
-					</ul>
-				</li>
-			</ul>
-		</section>
-
-		<section>
-			<h2>Debugging Errors</h2>
-			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>	
-			</ul>
-		</section >
-
+		<h2>API Endpoints</h2>
+		<ul>
+			<li><a href="#rooms">Rooms</a>
+				<ul>
+					<li><a href="#get-room">Get room</a></li>
+					<li><a href="#get-room-list">Get list of rooms</a></li>
+					<li><a href="#post-room">Create new room</a></li>
+					<li><a href="#update-room">Update room information</a></li>
+					<li><a href="#delete-room">Remove room</a></li>
+				</ul>
+			</li>
+			<li><a href="#buildings">Buildings</a>
+				<ul>
+					<li><a href="#get-building">Get buildings</a></li>
+					<li><a href="#get-building-list">Get list of buildings</a></li>
+					<li><a href="#get-building-rooms-list">Get list of rooms in a building</a></li>
+					<li><a href="#post-building">Create new building</a></li>
+					<li><a href="#update-building">Update building information</a></li>
+					<li><a href="#delete-building">Remove building</a></li>
+				</ul>
+			</li>
+			<li><a href="#sites">Sites</a>
+				<ul>
+					<li><a href="#get-site">Get site</a></li>
+					<li><a href="#get-site-list">Get list of sites</a></li>
+					<li><a href="#get-site-buildings-list">Get list of buildings in a site</a></li>
+					<li><a href="#post-site">Create new site</a></li>
+					<li><a href="#update-site">Update site information</a></li>
+					<li><a href="#delete-site">Remove site</a></li>
+				</ul>
+			</li>
+			<li><a href="#misc">Miscellaneous</a>
+				<ul>
+					<li><a href="#option-content">Accepted content types</a></li>
+					<li><a href="#option-action">Update resource information</a></li>
+				</ul>
+			</li>
+		</ul>
 	</nav>
 
 	<main>
@@ -77,7 +105,7 @@
 					<h2>Rooms</h2>
 				</header>
 				
-				<section class="subsection">
+				<section class="endpoint">
 
 					<header>
 						<h3 id="get-room">Get room</h3>
@@ -85,7 +113,7 @@
 						<p>Retrieve the information about a room</p>						
 					</header>
 
-					<div class="endpoint-description">
+					<section class="endpoint-description">
 						<figure>
 							<figcaption>URL Parameters</figcaption>
 							<table>
@@ -142,16 +170,38 @@
 							  	</tr>
 							</table>
 						</figure>
-					</div>
-					
+					</section>
 
 					<div class="api-examples">
-						
-					</div>
 
+						<figure>
+							<figcaption><p>Example Request</p></figcaption>
+							<pre>
+								GET http://comp3220.ecs.soton.ac.uk/rooms/1
+							</pre>
+						</figure>
+
+						<figure>
+							<figcaption><p>Example Response</p></figcaption>
+
+							<pre>
+								200 OK
+
+								{
+								    "url": "http://comp3220.ecs.soton.ac.uk/rooms/1",
+								    "number": "58-1023",
+								    "description": "Common Learning Space: Murray Lecture Room G",
+								    "capacity": 10,
+								    "building": "http://comp3220.ecs.soton.ac.uk/buildings/64"
+								}
+							</pre>
+
+						</figure>
+					</div>
+					
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="get-room-list">Get list of rooms</h3>
 						<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/</code></p>
@@ -208,13 +258,48 @@
 						</figure>
 					</div>
 					
-
 					<div class="api-examples">
-						
+
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								GET http://comp3220.ecs.soton.ac.uk/rooms
+							</pre>
+
+						</figure>
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+							<pre>
+								200 OK
+
+								[
+								    {
+								        "url": "http://comp3220.ecs.soton.ac.uk/rooms/1",
+								        "number": "58-1023",
+								        "description": "Common Learning Space: Murray Lecture Room G",
+								        "capacity": 10,
+								        "building": "http://comp3220.ecs.soton.ac.uk/buildings/64"
+								    },
+								    {
+								        "url": "http://comp3220.ecs.soton.ac.uk/rooms/2",
+								        "number": "6-1131",
+								        "description": "Nuffield L/R E - blocked out for Music",
+								        "capacity": 19,
+								        "building": "http://comp3220.ecs.soton.ac.uk/buildings/96"
+								    },
+								    ...
+							  	]
+							</pre>
+						</figure>
 					</div>
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="post-room">Create new room</h3>
 						<p><code>POST</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/</code></p>
@@ -296,14 +381,48 @@
 							</table>
 						</figure>
 					</div>
-					
 
 					<div class="api-examples">
-						
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								POST http://comp3220.ecs.soton.ac.uk/rooms/
+
+								{
+								    "url": "http://comp3220.ecs.soton.ac.uk/rooms/200",
+								    "number": "200-3220",
+								    "description": "CLS for ECS students",
+								    "capacity": 44,
+								    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
+								}
+							</pre>
+						</figure>
+
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+
+							<pre>
+								201 Created
+
+								{
+								    "url": "http://comp3220.ecs.soton.ac.uk/rooms/265",
+								    "number": "200-3220",
+								    "description": "CLS for ECS students",
+								    "capacity": 44,
+								    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
+								}
+							</pre>
+						</figure>	
 					</div>
+										
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="update-room">Update room information</h3>
 
@@ -404,9 +523,45 @@
 						</table>
 					</figure>
 					
+					<div class="api-examples">
+						
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								PUT/PATCH http://comp3220.ecs.soton.ac.uk/rooms/265
+
+								{
+								    "number": "200-3220",
+								    "description": "CLS for ECS students",
+								    "capacity": 50,
+								    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
+								}
+							</pre>
+						</figure>
+
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+							<pre>
+								200 OK
+
+								{
+								    "url": "http://comp3220.ecs.soton.ac.uk/rooms/265",
+								    "number": "200-3220",
+								    "description": "CLS for ECS students",
+								    "capacity": 50,
+								    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
+								}
+							</pre>
+						</figure>
+					</div>
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="delete-room">Delete room</h3>
 						<p><code>DELETE</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
@@ -440,10 +595,19 @@
 							<table></table>
 						</figure>
 					</div>
-					
 
 					<div class="api-examples">
 						
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+
+							<pre>
+								204 No Content
+							</pre>
+						</figure>
+
 					</div>
 				</section>
 
@@ -452,7 +616,7 @@
 					<h2>Buildings</h2>
 				</header>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="get-building">Get building</h3>
 						<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></p>
@@ -531,10 +695,41 @@
 
 					<div class="api-examples">
 						
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								GET http://comp3220.ecs.soton.ac.uk/buildings/2
+							</pre>
+
+						</figure>
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+
+							<pre>
+								200 OK
+
+								{
+								    "url": "http://comp3220.ecs.soton.ac.uk/buildings/2",
+								    "name": "Cycle store near B39",
+								    "number": "39A",
+								    "latitude": "50.937",
+								    "longitude": "-1.399",
+								    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
+								    "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/2/rooms"
+								}
+							</pre>
+							
+						</figure>
+
 					</div>
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 
 					<header>
 						<h3 id="get-building-list">Get list of buildings</h3>
@@ -602,13 +797,54 @@
 						</figure>
 					</div>
 					
-
 					<div class="api-examples">
-						
+
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								GET http://comp3220.ecs.soton.ac.uk/buildings/2
+							</pre>
+						</figure>
+						<figure>
+							<header>
+								<p>Example response</p>
+							</header>
+
+							<pre>
+								200 OK
+
+								[
+								    {
+								        "url": "http://comp3220.ecs.soton.ac.uk/buildings/1",
+								        "name": "158 Mayfield Road",
+								        "number": "1622",
+								        "latitude": "50.937",
+								        "longitude": "-1.390",
+								        "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
+								        "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/1/rooms"
+								    },
+								    {
+								        "url": "http://comp3220.ecs.soton.ac.uk/buildings/2",
+								        "name": "Cycle store near B39",
+								        "number": "39A",
+								        "latitude": "50.937",
+								        "longitude": "-1.399",
+								        "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
+								        "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/2/rooms"
+								    },
+
+								    ...
+								]
+							</pre>
+						</figure>
+
 					</div>
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="get-building-rooms-list">Get list of rooms in a building</h3>
 						<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}/rooms</code></p>
@@ -673,10 +909,50 @@
 							  	</tr>
 							</table>
 						</figure>
+
+						<div class="api-examples">
+							
+							<figure>
+								<header>
+									<p>Example Request</p>
+								</header>
+
+								<pre>
+									GET http://comp3220.ecs.soton.ac.uk/buildings/187/rooms
+								</pre>
+							</figure>
+
+							<figure>
+								<header>
+									<p>Example Response</p>
+								</header>
+
+								<pre>
+									200 OK
+
+									[
+									    {
+									        "url": "http://comp3220.ecs.soton.ac.uk/rooms/265",
+									        "number": "200-3220",
+									        "description": "CLS for ECS students",
+									        "capacity": 58
+									    },
+									    {
+									        "url": "http://comp3220.ecs.soton.ac.uk/rooms/268",
+									        "number": "123",
+									        "description": "CLS for ECS students",
+									        "capacity": 44
+									    },
+
+									    ...
+									]
+								</pre>
+							</figure>
+						</div>
 				</section>
 
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="post-building">Create new building</h3>
 						<p><code>POST</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/</code></p>
@@ -782,14 +1058,44 @@
 							</table>
 						</figure>
 					</div>
-					
-
+										
 					<div class="api-examples">
+
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								POST http://comp3220.ecs.soton.ac.uk/buildings/
+							</pre>
+						</figure>
+
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+
+							<pre>
+								201 Created
+
+								{
+								    "url": "http://comp3220.ecs.soton.ac.uk/buildings/200",
+								    "name": "547 Burgess Road",
+								    "number": "547",
+								    "latitude": "15.670",
+								    "longitude": "-11.345",
+								    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
+								    "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/200/rooms"
+								}
+							</pre>
+						</figure>
 						
 					</div>
+						
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="update-building">Update building information</h3>
 						<p><code>PUT</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{building_id}</code></p>
@@ -912,14 +1218,58 @@
 							  	</tr>
 							</table>
 					</figure>
+
+					<div class="api-examples">
+						
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								PUT/PATCH http://comp3220.ecs.soton.ac.uk/buildings/190
+
+								{
+								    "name": "550 Burgess Road",
+								    "number": "550",
+								    "latitude": "15.670",
+								    "longitude": "-11.345",
+								    "site": "http://comp3220.ecs.soton.ac.uk/sites/4"
+								}
+							</pre>
+						</figure>
+
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+
+							<pre>
+								200 OK
+
+								{
+								    "url": "http://comp3220.ecs.soton.ac.uk/buildings/190",
+								    "name": "550 Burgess Road",
+								    "number": "550",
+								    "latitude": "15.670",
+								    "longitude": "-11.345",
+								    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
+								    "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/190/rooms"
+								}
+							</pre>
+						</figure>
+					</div>
+
+					
 					
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="delete-building">Remove building</h3>
 						<p><code>DELETE</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{buildings_id}</code></p>
 						<p>Remove a building</p>
+						<p>CURRENTLY NOT WORKING</p>
 					</header>
 
 					<div class="endpoint-description">
@@ -952,7 +1302,43 @@
 					
 
 					<div class="api-examples">
-						
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								DELETE http://comp3220.ecs.soton.ac.uk/buildings/190
+
+								{
+								    "name": "550 Burgess Road",
+								    "number": "550",
+								    "latitude": "15.670",
+								    "longitude": "-11.345",
+								    "site": "http://comp3220.ecs.soton.ac.uk/sites/4"
+								}
+							</pre>
+						</figure>
+
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+
+							<pre>
+								200 OK
+								
+								{
+								    "url": "http://comp3220.ecs.soton.ac.uk/buildings/190",
+								    "name": "550 Burgess Road",
+								    "number": "550",
+								    "latitude": "15.670",
+								    "longitude": "-11.345",
+								    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
+								    "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/190/rooms"
+								}
+							</pre>
+						</figure>
 					</div>
 				</section>
 			</section>	
@@ -962,7 +1348,7 @@
 					<h2>Sites</h2>
 				</header>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="get-site">Get site</h3>
 						<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
@@ -1027,14 +1413,40 @@
 					
 
 					<div class="api-examples">
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								GET http://comp3220.ecs.soton.ac.uk/sites/4
+							</pre>
+						</figure>
+
+						
+
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+
+							<pre>
+								200 OK
+
+								{
+								    "url": "http://comp3220.ecs.soton.ac.uk/sites/4",
+								    "number": "1",
+								    "name": "Highfield Campus",
+								    "buildings": "http://comp3220.ecs.soton.ac.uk/sites/4/buildings"
+								}
+							</pre>
+						</figure>
 						
 					</div>
 
-
-
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="get-site-list">Get list of sites</h3>
 						<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/sites/</code></p>
@@ -1089,11 +1501,52 @@
 					</div>
 				
 					<div class="api-examples">
-						
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								GET http://comp3220.ecs.soton.ac.uk/sites
+							</pre>
+						</figure>
+
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+
+							<pre>
+								200 OK
+
+								[
+								    {
+								        "url": "http://comp3220.ecs.soton.ac.uk/sites/1",
+								        "number": "4",
+								        "name": "Winchester School of Art",
+								        "buildings": "http://comp3220.ecs.soton.ac.uk/sites/1/buildings"
+								    },
+								    {
+								        "url": "http://comp3220.ecs.soton.ac.uk/sites/2",
+								        "number": "5",
+								        "name": "The University of Southampton Science Park",
+								        "buildings": "http://comp3220.ecs.soton.ac.uk/sites/2/buildings"
+								    },
+								    {
+								        "url": "http://comp3220.ecs.soton.ac.uk/sites/3",
+								        "number": "6",
+								        "name": "National Oceanography Centre Campus",
+								        "buildings": "http://comp3220.ecs.soton.ac.uk/sites/3/buildings"
+								    },
+
+								    ...
+								]
+							</pre>
+						</figure>
 					</div>
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="get-site-buildings-list">Get list of buildings in a site</h3>
 						<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}/buildings</code></p>
@@ -1137,9 +1590,59 @@
 							  	</tr>
 							</table>
 						</figure>
+
+						<div class="api-examples">
+							<figure>
+								<header>
+									<p>Example Request</p>
+								</header>
+
+								<pre>
+									GET http://comp3220.ecs.soton.ac.uk/sites/1/buildings
+								</pre>
+							</figure>
+
+							
+
+							<figure>
+								<header>
+									<p>Example Response</p>
+								</header>
+
+								<pre>
+									200 OK
+
+									[
+									    {
+									        "url": "http://comp3220.ecs.soton.ac.uk/buildings/77",
+									        "name": "Winchester Temporary Facility",
+									        "number": "63P",
+									        "latitude": "51.065",
+									        "longitude": "-1.309"
+									    },
+									    {
+									        "url": "http://comp3220.ecs.soton.ac.uk/buildings/79",
+									        "name": "WSA Cycle store",
+									        "number": "63Z",
+									        "latitude": "51.065",
+									        "longitude": "-1.309"
+									    },
+									    {
+									        "url": "http://comp3220.ecs.soton.ac.uk/buildings/80",
+									        "name": "East Side",
+									        "number": "63A",
+									        "latitude": "51.066",
+									        "longitude": "-1.309"
+									    },
+
+									    ...
+									]
+								</pre>
+							</figure>
+						</div>
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="post-site">Create new site</h3>
 						<p><code>POST</code> <code>http://comp3220.ecs.soton.ac.uk/sites/</code></p>
@@ -1221,12 +1724,40 @@
 					
 
 					<div class="api-examples">
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								POST http://comp3220.ecs.soton.ac.uk/sites/
+							</pre>
+						</figure>
+
+						
+
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+
+							<pre>
+								201 Created
+
+								{
+								    "url": "http://comp3220.ecs.soton.ac.uk/sites/15",
+								    "number": "360",
+								    "name": "360 Laboratory",
+								    "buildings": "http://comp3220.ecs.soton.ac.uk/sites/15/buildings"
+								}
+							</pre>
+						</figure>
 						
 					</div>
 
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="update-site">Update site information</h3>
 						<p><code>PUT</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
@@ -1322,9 +1853,40 @@
 							  	</tr>
 							</table>
 					</figure>
+
+					<div class="api-examples">
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								PUT/PATCH http://comp3220.ecs.soton.ac.uk/sites/15
+							</pre>
+						</figure>
+
+						
+
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+
+							<pre>
+								200 OK
+
+								{
+								    "url": "http://comp3220.ecs.soton.ac.uk/sites/15",
+								    "number": "361",
+								    "name": "361 Laboratory",
+								    "buildings": "http://comp3220.ecs.soton.ac.uk/sites/15/buildings"
+								}
+							</pre>
+						</figure>
+					</div>
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="delete-site">Delete site</h3>
 						<p><code>DELETE</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
@@ -1361,8 +1923,30 @@
 					
 
 					<div class="api-examples">
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								DELETE http://comp3220.ecs.soton.ac.uk/sites/15
+							</pre>
+						</figure>
+
 						
+
+						<figure>
+							<header>
+								<p>Example Response</p>
+							</header>
+
+							<pre>
+								204 No Content
+							</pre>
+						</figure>
+
 					</div>
+					
 				</section>
 				
 			</section>	
@@ -1372,7 +1956,7 @@
 					<h2 id="misc">Miscellaneous</h2>
 				</header>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="option-content">Accepted Content Types</h3>
 					</header>
@@ -1390,49 +1974,9 @@
 						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></li>
 						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{site_id}/buildings</code></li>
 					</ul>
-					<!--
-					<table>
-  							<tr>
-							    <th>Endpoint</th>
-							    <th>Resource</th>
-					  		</tr>
-						  	<tr>
-							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/</code></td>
-							    <td>List of rooms</td>
-						  	</tr>
-						  	<tr>
-							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></td>
-							    <td>A specific room</td>
-						  	</tr>
-						  	<tr>
-							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/</code></td>
-							    <td>List of buildings</td>
-						  	</tr>
-						  	<tr>
-							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></td>
-							    <td>A specific building</td>
-						  	</tr>
-						  	<tr>
-							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}/rooms</code></td>
-							    <td>List of rooms in a building</td>
-						  	</tr>
-						  	<tr>
-							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites</code></td>
-							    <td>List of sites</td>
-						  	</tr>
-						  	<tr>
-							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></td>
-							    <td>A specific site</td>
-						  	</tr>
-						  	<tr>
-							    <td><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{site_id}/buildings</td>
-							    <td>List of buildings in a site</td>
-						  	</tr>
-						</table>
-					-->
 				</section>
 
-				<section class="subsection">
+				<section class="endpoint">
 					<header>
 						<h3 id="option-action">Details on updating resources</h3>
 					</header>
@@ -1450,21 +1994,11 @@
 						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites/</code></li>
 						<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></li>
 					</ul>
-					<p>For each type of resource (room, building or site), the content type for both the request and response body are the same: <code>application/xml</code>, <code>application/json</code> for parsing at the server side, and <code>application/xml</code>, <code>application/json</code>, <code>text/csv</code> for rendering at the client side.</p>
-					
 				</section>
 
 			</section>
 		</article>
 		
-		<article>
-			<section>
-				<header>
-					<h2>Debugging Errors</h2>
-				</header>
-			</section>
-		</article>
-
 	</main>
 
 </body>
