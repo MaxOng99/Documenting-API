@@ -1,0 +1,39 @@
+/* typography */
+
+th, td {
+	font-family: 'Source Code Pro', monospace;
+}
+
+th, td {
+	text-align: left;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+/* spacing */
+
+figure {
+	font-family: 'Source Code Pro', monospace;
+	width: 60%;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid purple;
+}
+
+pre {
+	tab-size: 0;
+}
+
+th, td {
+	padding: 10px;
+}
+
+figcaption {
+
+}

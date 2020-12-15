@@ -3,6 +3,9 @@
 <head>
 	<title>University Room API</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -97,12 +100,7 @@
 						</figure>
 
 						<figure>
-							<figcaption>Request Body</figcaption>
-							<table></table>
-						</figure>
-
-						<figure>
-							<figcaption>Response Body</figcaption>
+							<figcaption>Response Fields</figcaption>
 							<table>
 	  							<tr>
 								    <th>Field</th>
@@ -141,14 +139,14 @@
 					<div class="api-examples">
 
 						<figure>
-							<figcaption><p>Example Request</p></figcaption>
+							<figcaption>Example Request</figcaption>
 							<pre>
 								GET http://comp3220.ecs.soton.ac.uk/rooms/1
 							</pre>
 						</figure>
 
 						<figure>
-							<figcaption><p>Example Response</p></figcaption>
+							<figcaption>Example Response</figcaption>
 
 							<pre>
 								200 OK
@@ -176,17 +174,7 @@
 
 					<div class="endpoint-description">
 						<figure>
-							<figcaption>URL Parameters</figcaption>
-							<table></table>	
-						</figure>
-
-						<figure>
-							<figcaption>Request Body</figcaption>
-							<table></table>
-						</figure>
-
-						<figure>
-							<figcaption>Response Body</figcaption>
+							<figcaption>Response Fields</figcaption>
 
 							<p>The response will be a list of rooms, each with the following fields: </p>
 							<table>
@@ -274,12 +262,7 @@
 
 					<div class="endpoint-description">
 						<figure>
-							<figcaption>URL Parameters</figcaption>
-							<table></table>	
-						</figure>
-
-						<figure>
-							<figcaption>Request Body</figcaption>
+							<figcaption>Request Fields</figcaption>
 							<table>
 	  							<tr>
 								    <th>Field</th>
@@ -310,7 +293,7 @@
 						</figure>
 
 						<figure>
-							<figcaption>Response Body</figcaption>
+							<figcaption>Response Fields</figcaption>
 							
 							<p>The response will be a list of rooms, each with the following fields: </p>
 							<table>
@@ -396,12 +379,12 @@
 						<p><code>PATCH</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
 
 						<p>There are two methods that can be used to update the information for a room: <code>PUT</code> and <code>PATCH</code>.
-							<code>PUT</code> requires all of the information stated in the Request Body to be present, while <code>PATCH</code> does not require all of stated in the Request Body to be present.
+							<code>PUT</code> requires all of the information stated in the Request Fields to be present, while <code>PATCH</code> does not require all of stated in the Request Fields to be present.
 						</p>
 
 					</header>
 
-					<p>In both cases, the format for URL parameters, request body and response body are the same</p>
+					<p>In both cases, the format for URL parameters, Request Fields and Response Fields are the same</p>
 
 					<figure>
 						<figcaption>URL Parameters</figcaption>
@@ -421,7 +404,7 @@
 
 
 					<figure>
-						<figcaption>Request Body</figcaption>
+						<figcaption>Request Fields</figcaption>
 						<table>
   							<tr>
 							    <th>Field</th>
@@ -452,7 +435,7 @@
 					</figure>
 
 					<figure>
-						<figcaption>Response Body</figcaption>
+						<figcaption>Response Fields</figcaption>
 						
 						<p>The response will be a list of rooms, each with the following fields: </p>
 						<table>
@@ -551,19 +534,18 @@
 							</table>	
 						</figure>
 
-						<figure>
-							<figcaption>Request Body</figcaption>
-							<table></table>
-						</figure>
-
-						<figure>
-							<figcaption>Response Body</figcaption>
-							<table></table>
-						</figure>
 					</div>
 
 					<div class="api-examples">
-						
+						<figure>
+							<header>
+								<p>Example Request</p>
+							</header>
+
+							<pre>
+								DELETE http://comp3220.ecs.soton.ac.uk/rooms/2
+							</pre>
+						</figure>
 						<figure>
 							<header>
 								<p>Example Response</p>
@@ -607,12 +589,7 @@
 						</figure>
 
 						<figure>
-							<figcaption>Request Body</figcaption>
-							<table></table>
-						</figure>
-
-						<figure>
-							<figcaption>Response Body</figcaption>
+							<figcaption>Response Fields</figcaption>
 							<table>
 	  							<tr>
 								    <th>Field</th>
@@ -705,17 +682,7 @@
 
 					<div class="endpoint-description">
 						<figure>
-							<figcaption>URL Parameters</figcaption>
-							<table></table>	
-						</figure>
-
-						<figure>
-							<figcaption>Request Body</figcaption>
-							<table></table>
-						</figure>
-
-						<figure>
-							<figcaption>Response Body</figcaption>
+							<figcaption>Response Fields</figcaption>
 							<p>The response will be a list of buildings, each with the following fields:</p>
 
 							<table>
@@ -833,15 +800,9 @@
 							</table>
 					</figure>
 
-					<figure>
-						<figcaption>Request Body</figcaption>
-						<table></table>
-					</figure>
-
-
 					<p>The response will be a list of rooms, each with the following fields</p>
 					<figure>
-							<figcaption>Response Body</figcaption>
+							<figcaption>Response Fields</figcaption>
 							<table>
 	  							<tr>
 								    <th>Field</th>
@@ -932,7 +893,7 @@
 						</figure>
 
 						<figure>
-							<figcaption>Request Body</figcaption>
+							<figcaption>Request Fields</figcaption>
 							<table>
 	  							<tr>
 								    <th>Field</th>
@@ -978,7 +939,7 @@
 						</figure>
 
 						<figure>
-							<figcaption>Response Body</figcaption>
+							<figcaption>Response Fields</figcaption>
 							
 							<table>
 	  							<tr>
@@ -1068,11 +1029,11 @@
 						<p><code>PATCH</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{building_id}</code></p>
 
 						<p>There are two methods that can be used to update the information for a building: <code>PUT</code> and <code>PATCH</code>.
-							<code>PUT</code> requires all of the information stated in the Request Body to be present, while <code>PATCH</code> does not require all of stated in the Request Body to be present.
+							<code>PUT</code> requires all of the information stated in the Request Fields to be present, while <code>PATCH</code> does not require all of stated in the Request Fields to be present.
 						</p>
 					</header>
 
-					<p>In both cases, the format for URL parameters, request body and response body are the same</p>
+					<p>In both cases, the format for URL parameters, Request Fields and Response Fields are the same</p>
 
 					<figure>
 						<figcaption>URL Parameters</figcaption>
@@ -1092,7 +1053,7 @@
 
 
 					<figure>
-						<figcaption>Request Body</figcaption>
+						<figcaption>Request Fields</figcaption>
 						<table>
 	  							<tr>
 								    <th>Field</th>
@@ -1138,7 +1099,7 @@
 					</figure>
 
 					<figure>
-						<figcaption>Response Body</figcaption>
+						<figcaption>Response Fields</figcaption>
 						
 						<p>The response will be a list of rooms, each with the following fields: </p>
 						<table>
@@ -1255,15 +1216,6 @@
 							</table>	
 						</figure>
 
-						<figure>
-							<figcaption>Request Body</figcaption>
-							<table></table>
-						</figure>
-
-						<figure>
-							<figcaption>Response Body</figcaption>
-							<table></table>
-						</figure>
 					</div>
 					
 
@@ -1275,14 +1227,6 @@
 
 							<pre>
 								DELETE http://comp3220.ecs.soton.ac.uk/buildings/190
-
-								{
-								    "name": "550 Burgess Road",
-								    "number": "550",
-								    "latitude": "15.670",
-								    "longitude": "-11.345",
-								    "site": "http://comp3220.ecs.soton.ac.uk/sites/4"
-								}
 							</pre>
 						</figure>
 
@@ -1292,17 +1236,7 @@
 							</header>
 
 							<pre>
-								200 OK
-								
-								{
-								    "url": "http://comp3220.ecs.soton.ac.uk/buildings/190",
-								    "name": "550 Burgess Road",
-								    "number": "550",
-								    "latitude": "15.670",
-								    "longitude": "-11.345",
-								    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
-								    "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/190/rooms"
-								}
+								204 No Content
 							</pre>
 						</figure>
 					</div>
@@ -1339,12 +1273,7 @@
 						</figure>
 
 						<figure>
-							<figcaption>Request Body</figcaption>
-							<table></table>
-						</figure>
-
-						<figure>
-							<figcaption>Response Body</figcaption>
+							<figcaption>Response Fields</figcaption>
 							<table>
 	  							<tr>
 								    <th>Field</th>
@@ -1420,18 +1349,9 @@
 					</header>
 
 					<div class="endpoint-description">
-						<figure>
-							<figcaption>URL Parameters</figcaption>
-							<table></table>	
-						</figure>
 
 						<figure>
-							<figcaption>Request Body</figcaption>
-							<table></table>
-						</figure>
-
-						<figure>
-							<figcaption>Response Body</figcaption>
+							<figcaption>Response Fields</figcaption>
 
 							<p>The response will be a list of sites, each with the following fields: </p>
 							<table>
@@ -1520,7 +1440,7 @@
 					</header>
 
 					<figure>
-							<figcaption>Response Body</figcaption>
+							<figcaption>Response Fields</figcaption>
 							<p>The response will be a list of buildings, each with the following fields:</p>
 
 							<table>
@@ -1622,7 +1542,7 @@
 						</figure>
 
 						<figure>
-							<figcaption>Request Body</figcaption>
+							<figcaption>Request Fields</figcaption>
 							<table>
 	  							<tr>
 								    <th>Field</th>
@@ -1655,7 +1575,7 @@
 						</figure>
 
 						<figure>
-							<figcaption>Response Body</figcaption>
+							<figcaption>Response Fields</figcaption>
 							<table>
 	  							<tr>
 								    <th>Field</th>
@@ -1730,11 +1650,11 @@
 						<p><code>PATCH</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
 
 						<p>There are two methods that can be used to update the information for a site: <code>PUT</code> and <code>PATCH</code>.
-							<code>PUT</code> requires all of the information stated in the Request Body to be present, while <code>PATCH</code> does not require all of stated in the Request Body to be present.
+							<code>PUT</code> requires all of the information stated in the Request Fields to be present, while <code>PATCH</code> does not require all of stated in the Request Fields to be present.
 						</p>
 					</header>
 
-					<p>In both cases, the format for URL parameters, request body and response body are the same</p>
+					<p>In both cases, the format for URL parameters, Request Fields and Response Fields are the same</p>
 
 					<figure>
 						<figcaption>URL Parameters</figcaption>
@@ -1753,7 +1673,7 @@
 					</figure>
 
 					<figure>
-						<figcaption>Request Body</figcaption>
+						<figcaption>Request Fields</figcaption>
 						<table>
 	  							<tr>
 								    <th>Field</th>
@@ -1786,7 +1706,7 @@
 					</figure>
 
 					<figure>
-						<figcaption>Response Body</figcaption>
+						<figcaption>Response Fields</figcaption>
 						
 						<p>The response will be a list of sites, each with the following fields: </p>
 						<table>
@@ -1875,16 +1795,6 @@
 							  	</tr>
 							</table>	
 						</figure>
-
-						<figure>
-							<figcaption>Request Body</figcaption>
-							<table></table>
-						</figure>
-
-						<figure>
-							<figcaption>Response Body</figcaption>
-							<table></table>
-						</figure>
 					</div>
 					
 
@@ -1927,7 +1837,7 @@
 						<h3 id="option-content">Accepted Content Types</h3>
 					</header>
 
-					<p>For each type of resource (room, building or site), the content type for both the request and response body are the same: <code>application/xml</code>, <code>application/json</code> for parsing at the server side, and <code>application/xml</code>, <code>application/json</code>, <code>text/csv</code> for rendering at the client side.</p>
+					<p>For each type of resource (room, building or site), the content type for both the request and Response Fields are the same: <code>application/xml</code>, <code>application/json</code> for parsing at the server side, and <code>application/xml</code>, <code>application/json</code>, <code>text/csv</code> for rendering at the client side.</p>
 
 					<p>The following API endpoints can be used as a reference to obtain the accepted content types for the different type of resources</p>
 					<ul>
@@ -1947,7 +1857,7 @@
 						<h3 id="option-action">Details on updating resources</h3>
 					</header>
 
-					<p>The following API endpoints can be used as a reference to obtain further information about the details of a request body while sending <code>PUT</code> or <code>PATCH</code> requests to the server for updating building and site resources. This information can be found in the <code>actions</code> key/element in each of the following endpoints' response body.</p>
+					<p>The following API endpoints can be used as a reference to obtain further information about the details of a Request Fields while sending <code>PUT</code> or <code>PATCH</code> requests to the server for updating building and site resources. This information can be found in the <code>actions</code> key/element in each of the following endpoints' Response Fields.</p>
 
 					<h4 id="update-building-details">Buildings</h4>
 					<ul>
@@ -1980,12 +1890,12 @@
 						<p>Error Description</p>
 					</header>
 
-					<p>This error occurs while there is an incomplete request body or an invalid request body where the field type, field value or format of the request body is invalid. This applies to <code>POST</code>, <code>PUT</code> or <code>PATCH</code> requests when updating a resource.
+					<p>This error occurs while there is an incomplete Request Fields or an invalid Request Fields where the field type, field value or format of the Request Fields is invalid. This applies to <code>POST</code>, <code>PUT</code> or <code>PATCH</code> requests when updating a resource.
 					<h4>Incomplete <code>PUT</code> request</h4>
-					<p>Check the Response Body for the relevant endpoint where it describes the required fields that is needed, and add any missing fields</p>
+					<p>Check the Response Fields for the relevant endpoint where it describes the required fields that is needed, and add any missing fields</p>
 
 					<h4>Invalid request</h4>
-					<p>Check the Request Body for the relevant endpoint where it describes the types and values of the request fields, and the format of the request body needed. Ensure that your request body conforms to the format described in the relevant endpoint</p>
+					<p>Check the Request Fields for the relevant endpoint where it describes the types and values of the request fields, and the format of the Request Fields needed. Ensure that your Request Fields conforms to the format described in the relevant endpoint</p>
 				</section>
 
 				<section>
@@ -1994,7 +1904,7 @@
 					</header>
 
 					<figure>
-						<figcaption>Incomplete Request Body</figcaption>
+						<figcaption>Incomplete Request Fields</figcaption>
 						<pre>
 							400 Bad Request
 							{
@@ -2015,7 +1925,7 @@
 					</figure>
 
 					<figure>
-						<figcaption>Invalid Request Body</figcaption>
+						<figcaption>Invalid Request Fields</figcaption>
 						<pre>
 							400 Bad Request
 
