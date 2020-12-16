@@ -1,9 +1,68 @@
+/* structure */
+
+
+/*
+#body-header {
+	width: 100%;
+	position: fixed;
+}
+
+nav {
+	font-size: 12pt;
+	height: 100%;
+	position: fixed;
+	width: 400px;
+	position: fixed;
+	background-color: #dfdbd8;
+	margin-top: 100px;
+}
+
+main {
+	margin-left: 450px;
+}
+*/
+#body-header {
+	margin-left: 7.5%;
+}
+
+.wrapper {
+	display: flex;
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+nav {
+	flex: 1;
+	margin-right: 20px;
+}
+
+
+main {
+	flex: 3;
+	height: 100vh;
+	overflow-y: scroll;
+}
+
+figure {
+	margin-left: 0px;
+}
+
+pre {
+	padding: 20px;
+}
+
+
+.api-examples figure pre {
+	color: #d6d6d6;
+	background-color: #2e2e2e;
+	padding: 20px;
+}
+
 /* typography */
 
 body {
-	font-family: 'Source Code Pro', monospace;
-}
-th, td {
 	font-family: 'Source Code Pro', monospace;
 }
 
@@ -16,12 +75,6 @@ tr:nth-child(even) {
 }
 
 /* spacing */
-
-figure {
-	font-family: 'Source Code Pro', monospace;
-
-	width: 60%;
-}
 
 table {
   table-layout: fixed;
