@@ -67,10 +67,10 @@
 
 		<main>
 			<article>
-				<section id="rooms">
+				<section>
 
 					<header>
-						<h2>Rooms</h2>
+						<h2 id="rooms">Rooms</h2>
 					</header>
 					
 					<section class="endpoint">
@@ -139,16 +139,15 @@
 
 							<figure>
 								<figcaption>Example Request</figcaption>
-								<pre>
-									GET http://comp3220.ecs.soton.ac.uk/rooms/1
-								</pre>
+								
+								<pre>GET http://comp3220.ecs.soton.ac.uk/rooms/1</pre>
 							</figure>
 
 							<figure>
 								<figcaption>Example Response</figcaption>
 
-								<pre>
-									200 OK
+								
+								<pre>200 OK
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/rooms/1",
@@ -156,8 +155,7 @@
 									    "description": "Common Learning Space: Murray Lecture Room G",
 									    "capacity": 10,
 									    "building": "http://comp3220.ecs.soton.ac.uk/buildings/64"
-									}
-								</pre>
+									}</pre>
 
 							</figure>
 						</section>
@@ -214,21 +212,16 @@
 						<section class="api-examples">
 
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									GET http://comp3220.ecs.soton.ac.uk/rooms
-								</pre>
+								
+								<pre>GET http://comp3220.ecs.soton.ac.uk/rooms</pre>
 
 							</figure>
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
-								<pre>
-									200 OK
+								<figcaption>Example</figcaption>
+								
+								<pre>200 OK
 
 									[
 									    {
@@ -246,8 +239,7 @@
 									        "building": "http://comp3220.ecs.soton.ac.uk/buildings/96"
 									    },
 									    ...
-								  	]
-								</pre>
+								  	]</pre>
 							</figure>
 						</section>
 					</section>
@@ -332,12 +324,10 @@
 
 						<section class="api-examples">
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									POST http://comp3220.ecs.soton.ac.uk/rooms/
+								
+								<pre>POST http://comp3220.ecs.soton.ac.uk/rooms/
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/rooms/200",
@@ -345,17 +335,14 @@
 									    "description": "CLS for ECS students",
 									    "capacity": 44,
 									    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
-									}
-								</pre>
+									}</pre>
 							</figure>
 
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
+								<figcaption>Example</figcaption>
 
-								<pre>
-									201 Created
+								
+								<pre>201 Created
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/rooms/265",
@@ -363,8 +350,7 @@
 									    "description": "CLS for ECS students",
 									    "capacity": 44,
 									    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
-									}
-								</pre>
+									}</pre>
 							</figure>	
 						</section>
 											
@@ -474,28 +460,23 @@
 						<section class="api-examples">
 							
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									PUT/PATCH http://comp3220.ecs.soton.ac.uk/rooms/265
+								
+								<pre>PUT/PATCH http://comp3220.ecs.soton.ac.uk/rooms/265
 
 									{
 									    "number": "200-3220",
 									    "description": "CLS for ECS students",
 									    "capacity": 50,
 									    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
-									}
-								</pre>
+									}</pre>
 							</figure>
 
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
-								<pre>
-									200 OK
+								<figcaption>Example</figcaption>
+								
+								<pre>200 OK
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/rooms/265",
@@ -503,8 +484,7 @@
 									    "description": "CLS for ECS students",
 									    "capacity": 50,
 									    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
-									}
-								</pre>
+									}</pre>
 							</figure>
 						</section>
 					</section>
@@ -537,30 +517,24 @@
 
 						<section class="api-examples">
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									DELETE http://comp3220.ecs.soton.ac.uk/rooms/2
-								</pre>
+								
+								<pre>DELETE http://comp3220.ecs.soton.ac.uk/rooms/2</pre>
 							</figure>
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
+								<figcaption>Example</figcaption>
 
-								<pre>
-									204 No Content
-								</pre>
+								
+								<pre>204 No Content</pre>
 							</figure>
 
 						</section>
 					</section>
 
-				<section id="buildings">
+				<section>
 					<header>
-						<h2>Buildings</h2>
+						<h2 id="buildings">Buildings</h2>
 					</header>
 
 					<section class="endpoint">
@@ -638,22 +612,17 @@
 						<section class="api-examples">
 							
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									GET http://comp3220.ecs.soton.ac.uk/buildings/2
-								</pre>
+								
+								<pre>GET http://comp3220.ecs.soton.ac.uk/buildings/2</pre>
 
 							</figure>
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
+								<figcaption>Example</figcaption>
 
-								<pre>
-									200 OK
+								
+								<pre>200 OK
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/buildings/2",
@@ -663,8 +632,7 @@
 									    "longitude": "-1.399",
 									    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
 									    "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/2/rooms"
-									}
-								</pre>
+									}</pre>
 								
 							</figure>
 
@@ -732,21 +700,16 @@
 						<section class="api-examples">
 
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									GET http://comp3220.ecs.soton.ac.uk/buildings/2
-								</pre>
+								
+								<pre>GET http://comp3220.ecs.soton.ac.uk/buildings/2</pre>
 							</figure>
 							<figure>
-								<header>
-									<p>Example response</p>
-								</header>
+								<figcaption>Example</figcaption>
 
-								<pre>
-									200 OK
+								
+								<pre>200 OK
 
 									[
 									    {
@@ -769,8 +732,7 @@
 									    },
 
 									    ...
-									]
-								</pre>
+									]</pre>
 							</figure>
 
 						</section>
@@ -839,22 +801,19 @@
 							<section class="api-examples">
 								
 								<figure>
-									<header>
-										<p>Example Request</p>
+									<hfigcapti</
 									</header>
 
-									<pre>
-										GET http://comp3220.ecs.soton.ac.uk/buildings/187/rooms
-									</pre>
+									
+									<pre>GET http://comp3220.ecs.soton.ac.uk/buildings/187/rooms
+</pre>
 								</figure>
 
 								<figure>
-									<header>
-										<p>Example Response</p>
-									</header>
+									<heExamplefigcaption	</
 
-									<pre>
-										200 OK
+									
+									<pre>200 OK
 
 										[
 										    {
@@ -872,7 +831,7 @@
 
 										    ...
 										]
-									</pre>
+</pre>
 								</figure>
 							</section>
 					</section>
@@ -988,22 +947,17 @@
 						<section class="api-examples">
 
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									POST http://comp3220.ecs.soton.ac.uk/buildings/
-								</pre>
+								
+								<pre>POST http://comp3220.ecs.soton.ac.uk/buildings/</pre>
 							</figure>
 
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
+								<figcaption>Example</figcaption>
 
-								<pre>
-									201 Created
+								
+								<pre>201 Created
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/buildings/200",
@@ -1013,8 +967,7 @@
 									    "longitude": "-11.345",
 									    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
 									    "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/200/rooms"
-									}
-								</pre>
+									}</pre>
 							</figure>
 							
 						</section>
@@ -1148,12 +1101,10 @@
 						<section class="api-examples">
 							
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									PUT/PATCH http://comp3220.ecs.soton.ac.uk/buildings/190
+								
+								<pre>PUT/PATCH http://comp3220.ecs.soton.ac.uk/buildings/190
 
 									{
 									    "name": "550 Burgess Road",
@@ -1161,17 +1112,14 @@
 									    "latitude": "15.670",
 									    "longitude": "-11.345",
 									    "site": "http://comp3220.ecs.soton.ac.uk/sites/4"
-									}
-								</pre>
+									}</pre>
 							</figure>
 
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
+								<figcaption>Example</figcaption>
 
-								<pre>
-									200 OK
+								
+								<pre>200 OK
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/buildings/190",
@@ -1181,8 +1129,7 @@
 									    "longitude": "-11.345",
 									    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
 									    "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/190/rooms"
-									}
-								</pre>
+									}</pre>
 							</figure>
 						</section>
 
@@ -1220,31 +1167,25 @@
 
 						<section class="api-examples">
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									DELETE http://comp3220.ecs.soton.ac.uk/buildings/190
-								</pre>
+								
+								<pre>DELETE http://comp3220.ecs.soton.ac.uk/buildings/190</pre>
 							</figure>
 
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
+								<figcaption>Example</figcaption>
 
-								<pre>
-									204 No Content
-								</pre>
+								
+								<pre>204 No Content</pre>
 							</figure>
 						</section>
 					</section>
 				</section>	
 
-				<section id="sites">
+				<section>
 					<header>
-						<h2>Sites</h2>
+						<h2 id="sites">Sites</h2>
 					</header>
 
 					<section class="endpoint">
@@ -1308,32 +1249,26 @@
 
 						<section class="api-examples">
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									GET http://comp3220.ecs.soton.ac.uk/sites/4
-								</pre>
+								
+								<pre>GET http://comp3220.ecs.soton.ac.uk/sites/4</pre>
 							</figure>
 
 							
 
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
+								<figcaption>Example</figcaption>
 
-								<pre>
-									200 OK
+								
+								<pre>200 OK
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/sites/4",
 									    "number": "1",
 									    "name": "Highfield Campus",
 									    "buildings": "http://comp3220.ecs.soton.ac.uk/sites/4/buildings"
-									}
-								</pre>
+									}</pre>
 							</figure>
 							
 						</section>
@@ -1387,22 +1322,17 @@
 					
 						<section class="api-examples">
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									GET http://comp3220.ecs.soton.ac.uk/sites
-								</pre>
+								
+								<pre>GET http://comp3220.ecs.soton.ac.uk/sites</pre>
 							</figure>
 
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
+								<figcaption>Example</figcaption>
 
-								<pre>
-									200 OK
+								
+								<pre>200 OK
 
 									[
 									    {
@@ -1425,8 +1355,7 @@
 									    },
 
 									    ...
-									]
-								</pre>
+									]</pre>
 							</figure>
 						</section>
 					</section>
@@ -1478,24 +1407,21 @@
 
 							<section class="api-examples">
 								<figure>
-									<header>
-										<p>Example Request</p>
+									<hfigcapti</
 									</header>
 
-									<pre>
-										GET http://comp3220.ecs.soton.ac.uk/sites/1/buildings
-									</pre>
+									
+									<pre>GET http://comp3220.ecs.soton.ac.uk/sites/1/buildings
+</pre>
 								</figure>
 
 								
 
 								<figure>
-									<header>
-										<p>Example Response</p>
-									</header>
+									<heExamplefigcaption	</
 
-									<pre>
-										200 OK
+									
+									<pre>200 OK
 
 										[
 										    {
@@ -1522,7 +1448,7 @@
 
 										    ...
 										]
-									</pre>
+</pre>
 								</figure>
 							</section>
 					</section>
@@ -1610,32 +1536,26 @@
 
 						<section class="api-examples">
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									POST http://comp3220.ecs.soton.ac.uk/sites/
-								</pre>
+								
+								<pre>POST http://comp3220.ecs.soton.ac.uk/sites/</pre>
 							</figure>
 
 							
 
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
+								<figcaption>Example</figcaption>
 
-								<pre>
-									201 Created
+								
+								<pre>201 Created
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/sites/15",
 									    "number": "360",
 									    "name": "360 Laboratory",
 									    "buildings": "http://comp3220.ecs.soton.ac.uk/sites/15/buildings"
-									}
-								</pre>
+									}</pre>
 							</figure>
 							
 						</section>
@@ -1741,32 +1661,26 @@
 
 						<section class="api-examples">
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									PUT/PATCH http://comp3220.ecs.soton.ac.uk/sites/15
-								</pre>
+								
+								<pre>PUT/PATCH http://comp3220.ecs.soton.ac.uk/sites/15</pre>
 							</figure>
 
 							
 
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
+								<figcaption>Example</figcaption>
 
-								<pre>
-									200 OK
+								
+								<pre>200 OK
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/sites/15",
 									    "number": "361",
 									    "name": "361 Laboratory",
 									    "buildings": "http://comp3220.ecs.soton.ac.uk/sites/15/buildings"
-									}
-								</pre>
+									}</pre>
 							</figure>
 						</section>
 					</section>
@@ -1799,25 +1713,19 @@
 
 						<section class="api-examples">
 							<figure>
-								<header>
-									<p>Example Request</p>
-								</header>
+								<figcaption>Example Request</figcaption>
 
-								<pre>
-									DELETE http://comp3220.ecs.soton.ac.uk/sites/15
-								</pre>
+								
+								<pre>DELETE http://comp3220.ecs.soton.ac.uk/sites/15</pre>
 							</figure>
 
 							
 
 							<figure>
-								<header>
-									<p>Example Response</p>
-								</header>
+								<figcaption>Example</figcaption>
 
-								<pre>
-									204 No Content
-								</pre>
+								
+								<pre>204 No Content</pre>
 							</figure>
 
 						</section>
@@ -1904,8 +1812,8 @@
 
 						<figure>
 							<figcaption>Incomplete Request Fields</figcaption>
-							<pre>
-								400 Bad Request
+							
+							<pre>400 Bad Request
 								{
 								    "building": [
 								        "This field is required."
@@ -1919,14 +1827,13 @@
 								    "description": [
 								        "This field is required."
 								    ]
-								}
-							</pre>
+								</pre>
 						</figure>
 
 						<figure>
 							<figcaption>Invalid Request Fields</figcaption>
-							<pre>
-								400 Bad Request
+							
+							<pre>400 Bad Request
 
 								{
 								    "building": [
@@ -1935,18 +1842,16 @@
 								    "capacity": [
 								        "A valid integer is required."
 								    ]
-								}
-							</pre>
+								</pre>
 
-							<pre>
-								400 Bad Request
+							
+							<pre>400 Bad Request
 
 								{
 								    "building": [
 								        "Invalid hyperlink - No URL match."
 								    ]
-								}
-							</pre>
+								</pre>
 						</figure>
 					</section>
 				</section>
@@ -1974,13 +1879,12 @@
 						</header>
 						<figure>
 								<figcaption>Unauthorized Requests</figcaption>
-								<pre>
-									401 Unauthorized
+								
+								<pre>401 Unauthorized
 
 									{
 									    "detail": "Authentication credentials were not provided."
-									}
-								</pre>
+									}</pre>
 						</figure>
 					</section>
 
@@ -2012,23 +1916,21 @@
 						</header>
 						<figure>
 								<figcaption>Invalid URL Parameters</figcaption>
-								<pre>
-									404 Not Found
+								
+								<pre>404 Not Found
 
 									&lth1&gtNot Found&lt/h1&gt
-									&ltp&gtThe requested URL /rooms/inavalidparam was not found on this server. &lt/p&gt
-								</pre>
+									&ltp&gtThe requested URL /rooms/inavalidparam was not found on this server. &lt/p&gt</pre>
 						</figure>
 
 						<figure>
 								<figcaption>Resource does not exist</figcaption>
-								<pre>
-									404 Not Found
+								
+								<pre>404 Not Found
 
 									{
 									    "detail": "Not Found."
-									}
-								</pre>
+									}</pre>
 						</figure>
 					</section>
 				</section>
@@ -2052,11 +1954,10 @@
 						</header>
 						<figure>
 								<figcaption>Invalid URL Parameters</figcaption>
-								<pre>
-									{
+								
+								<pre>{
 									    "detail": "Method \"DELETE\" not allowed."
-									}
-								</pre>
+									}</pre>
 						</figure>
 					</section>
 				</section>

@@ -21,7 +21,7 @@ html, body, h1{
 
 .wrapper {
 	display: flex;
-	width: 85%;
+	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px; 
@@ -42,9 +42,17 @@ main {
 
 figure {
 	margin-left: 0px;
+	margin-right: 0px;
 }
 
 
+#rooms, #buildings, #sites {
+	font-size: 24pt;
+}
+
+nav h2 {
+	font-size: 24pt;
+}
 /* typography */
 
 body {
@@ -61,15 +69,20 @@ code {
 
 /* code block formatting */
 pre {
+	padding: 15px;
 	color: #d6d6d6;
 	background-color: #2e2e2e;
-	padding: 20px;
 	tab-size: 0;
 	font-size: 11pt;
 }
 
+figcaption {
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
 .endpoint {
-	border-bottom: 2px solid grey;
+	border-bottom: 3px solid grey;
 }
 /* table formatting */
 
@@ -81,7 +94,7 @@ table {
 }
 
 tr:nth-child(even) {
-	background-color: #f2f2f2;
+	background-color: #f6f7f9;
 }
 
 th, td {
