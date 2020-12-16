@@ -11,7 +11,7 @@
 
 <body>
 
-	<header id="body-header">
+	<header id="header">
 		<h1>University Room API</h1>
 	</header>
 
@@ -77,7 +77,7 @@
 
 						<header>
 							<h3 id="get-room">Get room</h3>
-							<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
+							<p><code>GET http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
 							<p>Retrieve the information about a room</p>						
 						</header>
 
@@ -167,7 +167,7 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="get-room-list">Get list of rooms</h3>
-							<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/</code></p>
+							<p><code>GET http://comp3220.ecs.soton.ac.uk/rooms/</code></p>
 							<p>Retrieve the information of all rooms</p>
 						</header>
 
@@ -255,7 +255,7 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="post-room">Create new room</h3>
-							<p><code>POST</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/</code></p>
+							<p><code>POST http://comp3220.ecs.soton.ac.uk/rooms/</code></p>
 							<p>Creates a new room</p>
 						</header>
 
@@ -374,8 +374,8 @@
 						<header>
 							<h3 id="update-room">Update room information</h3>
 
-							<p><code>PUT</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
-							<p><code>PATCH</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
+							<p><code>PUT http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
+							<p><code>PATCH http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
 
 							<p>There are two methods that can be used to update the information for a room: <code>PUT</code> and <code>PATCH</code>.
 								<code>PUT</code> requires all of the information stated in the Request Fields to be present, while <code>PATCH</code> does not require all of stated in the Request Fields to be present.
@@ -512,7 +512,7 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="delete-room">Delete room</h3>
-							<p><code>DELETE</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
+							<p><code>DELETE http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
 							<p>Delete a room</p>
 						</header>
 
@@ -566,7 +566,7 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="get-building">Get building</h3>
-							<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></p>
+							<p><code>GET http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></p>
 							<p>Retrieve the information about a building</p>
 						</header>
 
@@ -675,7 +675,7 @@
 
 						<header>
 							<h3 id="get-building-list">Get list of buildings</h3>
-							<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/</code></p>
+							<p><code>GET http://comp3220.ecs.soton.ac.uk/buildings/</code></p>
 							<p>Retrieve the information of all buildings</p>
 						</header>
 
@@ -779,7 +779,7 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="get-building-rooms-list">Get list of rooms in a building</h3>
-							<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}/rooms</code></p>
+							<p><code>GET http://comp3220.ecs.soton.ac.uk/buildings/{building_id}/rooms</code></p>
 							<p>Returns the list of rooms located within a specific building</p>
 						</header>
 
@@ -881,7 +881,7 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="post-building">Create new building</h3>
-							<p><code>POST</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/</code></p>
+							<p><code>POST http://comp3220.ecs.soton.ac.uk/buildings/</code></p>
 							<p>Creates a new building</p>
 						</header>
 
@@ -1024,8 +1024,8 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="update-building">Update building information</h3>
-							<p><code>PUT</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{building_id}</code></p>
-							<p><code>PATCH</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{building_id}</code></p>
+							<p><code>PUT http://comp3220.ecs.soton.ac.uk/rooms/{building_id}</code></p>
+							<p><code>PATCH http://comp3220.ecs.soton.ac.uk/rooms/{building_id}</code></p>
 
 							<p>There are two methods that can be used to update the information for a building: <code>PUT</code> and <code>PATCH</code>.
 								<code>PUT</code> requires all of the information stated in the Request Fields to be present, while <code>PATCH</code> does not require all of stated in the Request Fields to be present.
@@ -1193,7 +1193,7 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="delete-building">Remove building</h3>
-							<p><code>DELETE</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{buildings_id}</code></p>
+							<p><code>DELETE http://comp3220.ecs.soton.ac.uk/buildings/{buildings_id}</code></p>
 							<p>Remove a building</p>
 							<p>CURRENTLY NOT WORKING</p>
 						</header>
@@ -1250,7 +1250,7 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="get-site">Get site</h3>
-							<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
+							<p><code>GET http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
 							<p>Retrieve the information about a site</p>
 						</header>
 
@@ -1343,7 +1343,7 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="get-site-list">Get list of sites</h3>
-							<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/sites/</code></p>
+							<p><code>GET http://comp3220.ecs.soton.ac.uk/sites/</code></p>
 							<p>Retrieve the information of all sites</p>
 						</header>
 
@@ -1434,7 +1434,7 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="get-site-buildings-list">Get list of buildings in a site</h3>
-							<p><code>GET</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}/buildings</code></p>
+							<p><code>GET http://comp3220.ecs.soton.ac.uk/sites/{site_id}/buildings</code></p>
 							<p>Returns the list of buildings located within a specific site</p>
 						</header>
 
@@ -1530,7 +1530,7 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="post-site">Create new site</h3>
-							<p><code>POST</code> <code>http://comp3220.ecs.soton.ac.uk/sites/</code></p>
+							<p><code>POST http://comp3220.ecs.soton.ac.uk/sites/</code></p>
 							<p>Creates a new site</p>
 						</header>
 
@@ -1645,8 +1645,8 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="update-site">Update site information</h3>
-							<p><code>PUT</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
-							<p><code>PATCH</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
+							<p><code>PUT http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
+							<p><code>PATCH http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
 
 							<p>There are two methods that can be used to update the information for a site: <code>PUT</code> and <code>PATCH</code>.
 								<code>PUT</code> requires all of the information stated in the Request Fields to be present, while <code>PATCH</code> does not require all of stated in the Request Fields to be present.
@@ -1774,7 +1774,7 @@
 					<section class="endpoint">
 						<header>
 							<h3 id="delete-site">Delete site</h3>
-							<p><code>DELETE</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
+							<p><code>DELETE http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
 							<p>Delete a site</p>
 						</header>
 
@@ -1840,14 +1840,14 @@
 
 						<p>The following API endpoints can be used as a reference to obtain the accepted content types for the different type of resources</p>
 						<ul>
-							<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/</code></li>
-							<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></li>
-							<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/</code></li>
-							<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></li>
-							<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}/rooms</code></li>
-							<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites</code></li>
-							<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></li>
-							<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{site_id}/buildings</code></li>
+							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/rooms/</code></li>
+							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></li>
+							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/buildings/</code></li>
+							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></li>
+							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/buildings/{building_id}/rooms</code></li>
+							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/sites</code></li>
+							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></li>
+							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/buildings/{site_id}/buildings</code></li>
 						</ul>
 					</section>
 
@@ -1860,14 +1860,14 @@
 
 						<h4 id="update-building-details">Buildings</h4>
 						<ul>
-							<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/</code></li>
-							<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></li>
+							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/buildings/</code></li>
+							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></li>
 						</ul>
 
 						<h4 id="update-site-details">Sites</h4>
 						<ul>
-							<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites/</code></li>
-							<li><code>OPTION</code> <code>http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></li>
+							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/sites/</code></li>
+							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></li>
 						</ul>
 					</section>
 

@@ -1,28 +1,22 @@
-/* structure */
+/* document structure */
 
-
-/*
-#body-header {
-	width: 100%;
-	position: fixed;
-}
-
-nav {
-	font-size: 12pt;
+html, body, h1{
+	margin: 0px;
+	padding: 0px;
 	height: 100%;
-	position: fixed;
-	width: 400px;
-	position: fixed;
-	background-color: #dfdbd8;
-	margin-top: 100px;
+	overflow-x: hidden;
 }
 
-main {
-	margin-left: 450px;
+#header {
+	width: 100%;
+	background-color: #3e474f;
+	padding-left: 7.5%;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
-*/
-#body-header {
-	margin-left: 7.5%;
+
+#header h1 {
+	color: #adb6b9;
 }
 
 .wrapper {
@@ -30,17 +24,18 @@ main {
 	width: 85%;
 	margin-left: auto;
 	margin-right: auto;
-
+	margin-top: 20px; 
+	align-items: center;
 }
 
 nav {
-	flex: 1;
+	flex: 1.5;
 	margin-right: 20px;
+	height: 100vh;
 }
 
-
 main {
-	flex: 3;
+	flex: 4;
 	height: 100vh;
 	overflow-y: scroll;
 }
@@ -49,32 +44,34 @@ figure {
 	margin-left: 0px;
 }
 
-pre {
-	padding: 20px;
-}
-
-
-.api-examples figure pre {
-	color: #d6d6d6;
-	background-color: #2e2e2e;
-	padding: 20px;
-}
 
 /* typography */
 
 body {
 	font-family: 'Source Code Pro', monospace;
+	background-color: #edeff0;
 }
 
-th, td {
-	text-align: left;
+code {
+	padding: 3px;
+	font-size: 11pt;
+	font-family: 'Source Code Pro', monospace;
+	background-color: #f6f7f9;
 }
 
-tr:nth-child(even) {
-	background-color: #f2f2f2;
+/* code block formatting */
+pre {
+	color: #d6d6d6;
+	background-color: #2e2e2e;
+	padding: 20px;
+	tab-size: 0;
+	font-size: 11pt;
 }
 
-/* spacing */
+.endpoint {
+	border-bottom: 2px solid grey;
+}
+/* table formatting */
 
 table {
   table-layout: fixed;
@@ -83,16 +80,13 @@ table {
   border: 2px solid black;
 }
 
-pre {
-	tab-size: 0;
+tr:nth-child(even) {
+	background-color: #f2f2f2;
 }
 
 th, td {
+	text-align: left;
 	padding: 10px;
-}
-
-figcaption {
-
 }
 
 /* links */
