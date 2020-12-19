@@ -1,0 +1,552 @@
+---
+openapi: 3.0.0
+info:
+  title: University Seminar API
+  description: API for making room bookings and seminar reservations.
+  version: "1.0"
+servers:
+- url: http://comp3220.ecs.soton.ac.uk/
+paths:
+  /seminars:
+    get:
+      tags:
+      - seminars
+      summary: Returns the list of all available seminars.
+      operationId: getAllSeminars
+      responses:
+        "200":
+          description: |
+            `OK`
+
+            **List of seminars successfully returned.**
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Seminar'
+              example:
+              - id: 1
+                url: http://comp3220.ecs.soton.ac.uk/seminars/1
+                seats: 50
+                name: Machine Learning Fundmentals
+                room: http://comp3220.ecs.soton.ac.uk/rooms/7
+                date: 23/01/2021
+                startTime: "1300"
+                endTime: "1600"
+                reservations: http://comp3220.ecs.soton.ac.uk/seminars/1/reservations
+              - id: 2
+                url: http://comp3220.ecs.soton.ac.uk/seminars/2
+                seats: 34
+                name: RESTful Web Services - An Introduction
+                room: http://comp3220.ecs.soton.ac.uk/rooms/14
+                date: 26/01/2021
+                startTime: "1530"
+                endTime: "1630"
+                reservations: http://comp3220.ecs.soton.ac.uk/seminars/2/reservations
+    post:
+      tags:
+      - seminars
+      summary: Creates a new seminar.
+      operationId: createNewSeminar
+      requestBody:
+        description: A seminar object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Seminar'
+            example:
+              seats: 50
+              name: Machine Learning Fundmentals
+              room: http://comp3220.ecs.soton.ac.uk/rooms/7
+              date: 23/01/2021
+              startTime: "1300"
+              endTime: "1600"
+        required: true
+      responses:
+        "201":
+          description: |
+            `Created`
+
+            **Seminar successfully created.**
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Seminar'
+              example:
+                id: 1
+                url: http://comp3220.ecs.soton.ac.uk/seminar/1
+                seats: 50
+                name: Machine Learning Fundmentals
+                room: http://comp3220.ecs.soton.ac.uk/rooms/7
+                date: 23/01/2021
+                startTime: "1300"
+                endTime: "1600"
+                reservations: http://comp3220.ecs.soton.ac.uk/seminars/1/reservations
+          links:
+            Get Seminar:
+              operationRef: '#/seminars/{seminar_id}/get'
+              parameters:
+                seminar_id: $response.body#/id
+              description: |
+                The `id` value returned in the response can be used as the value for the `seminar_id` url parameter in `GET /seminars/{seminar_id}`.
+            Cancel Seminar:
+              operationRef: '#/seminars/{seminar_id}/delete'
+              parameters:
+                Authorization: $request.header.Authorization
+                seminar_id: $response.body#/id
+              description: |
+                The `id` value returned in the response can be used as a `seminar_id` to delete this resource by sending a request to `DELETE /seminars/{seminar_id}`.
+        "400":
+          description: |
+            `Bad Request`
+
+            **This error occurs due to the following reasons**
+
+            - **There are incomplete request fields or invalid request fields.**
+            - **When the room has already been booked at the requested date and time for another seminar.**
+            - **The requested number of seats exceeded the maximum capacity of the room.**
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+              examples:
+                Invalid/Incomplete Request:
+                  value:
+                    seats: Invalid type. Expected integer, received decimals.
+                    name: This field is required.
+                    date: Date of seminar not specified.
+                Room Booked:
+                  value:
+                    date: Room is currently booked at the requested date.
+                Maximum Capacity Exceeded:
+                  value:
+                    seats: Requested number of seats exceeded maximum room capacity.
+        "401":
+          description: |
+            `Unauthorized`
+
+            **This error occurs when a staff authorization token is not supplied. Staff token is needed to ensure that only staffs can book a room.**
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+              example:
+                Authorization failed: Please supply a staff authorization token.
+      security:
+      - bearerAuth: []
+  /seminars/{seminar_id}:
+    get:
+      tags:
+      - seminars
+      summary: Gets a seminar by its id.
+      operationId: getSeminarById
+      parameters:
+      - name: seminar_id
+        in: path
+        description: Unique identifier for a seminar.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+        example: 1
+      responses:
+        "200":
+          description: |
+            `OK`
+
+            **Seminar successfully created.**
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Seminar'
+              example:
+                id: 1
+                url: http://comp3220.ecs.soton.ac.uk/seminar/1
+                seats: 50
+                name: Machine Learning Fundmentals
+                room: http://comp3220.ecs.soton.ac.uk/rooms/7
+                date: 23/01/2021
+                startTime: "1300"
+                endTime: "1600"
+                reservations: http://comp3220.ecs.soton.ac.uk/seminar/1/reservations
+          links:
+            Create Reservation:
+              operationRef: '#/reservations/post'
+              parameters:
+                seminar_id: $request.path.id
+                Authorization: $request.header.Authorization
+              description: |
+                Make a reservation to this seminar by including the returned `id` value i the request body for `POST /reservations`.
+            Cancel Seminar:
+              operationRef: '#/seminars/{seminar_id}/delete'
+              parameters:
+                Authorization: $request.header.Authorization
+                seminar_id: $response.body#/id
+              description: "The `id` value returned in the response can be used as a `seminar_id` to delete this resource by sending a request to `DELETE /seminars/{seminar_id}`.\n  \n"
+    delete:
+      tags:
+      - seminars
+      summary: Cancel a seminar.
+      operationId: cancelSeminar
+      parameters:
+      - name: seminar_id
+        in: path
+        description: Unique identifier for a seminar.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+        example: 1
+      responses:
+        "204":
+          description: |
+            `No Content`
+
+            **The seminar is succesfully cancelled.**
+        "401":
+          description: |
+            `Unauthorized`
+
+            **This error occurs when a staff authorization token is not supplied. Staff token is needed to ensure that only staffs can book a room.**
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+              example:
+                Authorization failed: Please supply a staff authorization token.
+      security:
+      - bearerAuth: []
+  /seminars/{seminar_id}/reservations:
+    get:
+      tags:
+      - seminars
+      summary: Gets the list of reservations made for a specific seminar.
+      operationId: getSeminarReservations
+      parameters:
+      - name: seminar_id
+        in: path
+        description: Unique identifier for a seminar.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+        example: 1
+      responses:
+        "200":
+          description: "`OK`\n\n**List of reservations for this seminar returned successfully.** \n"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reservation'
+              example:
+              - id: 1
+                url: http://comp3220.ecs.soton.ac.uk/reservations/1
+                bookings: 3
+                seminar: http://comp3220.ecs.soton.ac.uk/seminars/2
+              - id: 2
+                url: http://comp3220.ecs.soton.ac.uk/reservations/2
+                bookings: 4
+                seminar: http://comp3220.ecs.soton.ac.uk/seminars/2
+  /reservations:
+    get:
+      tags:
+      - reservations
+      summary: Returns the list of all reservations made.
+      operationId: getAllReservations
+      responses:
+        "200":
+          description: "`OK`\n\n**Reservations returned successfully.** \n"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reservation'
+              example:
+              - id: 1
+                url: http://comp3220.ecs.soton.ac.uk/reservations/1
+                bookings: 3
+                seminar: http://comp3220.ecs.soton.ac.uk/seminars/1
+              - id: 2
+                url: http://comp3220.ecs.soton.ac.uk/reservations/2
+                bookings: 3
+                seminar: http://comp3220.ecs.soton.ac.uk/seminars/2
+              - id: 3
+                url: http://comp3220.ecs.soton.ac.uk/reservations/3
+                bookings: 4
+                seminar: http://comp3220.ecs.soton.ac.uk/seminars/2
+    post:
+      tags:
+      - reservations
+      summary: Creates a new reservation.
+      operationId: createNewReservation
+      requestBody:
+        description: A reservation object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reservation'
+            example:
+              bookings: 3
+              seminar: http://comp3220.ecs.soton.ac.uk/seminars/1
+        required: true
+      responses:
+        "201":
+          description: "`Created` \n\n**Reservation successfully made.**\n"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reservation'
+              example:
+                id: 1
+                url: http://comp3220.ecs.soton.ac.uk/reservations/1
+                bookings: 3
+                seminar: http://comp3220.ecs.soton.ac.uk/seminars/1
+          links:
+            Get Reservation:
+              operationRef: '#/reservations/{reservation_id}/get'
+              parameters:
+                reservation_id: $response.body#/id
+              description: |
+                The `id` value returned in the response can be used as the `reservation_id` parameter in `GET /reservations/{reservation_id}`.
+            Cancel Reservation:
+              operationRef: '#/reservations/{reservation_id}/delete'
+              parameters:
+                Authorization: $request.header.Authorization
+                reservation_id: $response.body#/id
+              description: |
+                The `id` value returned in the response can be used as the `reservation_id` parameter in `DELETE /reservations/{reservation_id}`.
+        "400":
+          description: "`Bad Request`\n\n**This error occurs due to three reasons**\n\n- **The number of seats booked exceeds the maximum number of capacity for the seminar.**\n\n- **A reservation for more than 4 poeple was made (This only applies for members of the public and students)**\n  \n- **There are incomplete request fields or invalid request fields.**\n"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400_1'
+              examples:
+                Invalid/Incomplete Request:
+                  value:
+                    bookings: Invalid type. Expected integer, received decimals.
+                    seminar: This field is required.
+                Booking Exceeded Capacity:
+                  value:
+                    bookings: Not enough seats for the requested number of bookings.
+                Invalid bookings:
+                  value:
+                    bookings: You cannot make a reservation for more than 4 people.
+        "401":
+          description: |
+            `Unauthorized`
+
+            **This error occurs when an authorization token is not supplied. Authorization token is needed to distinguish between staff, and members of the public and students. This is to ensure that penalties are recorded for students and public members if they cancel their reservation in less than 24 hours' of noitce.**
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+              example:
+                Authorization failed: Please supply an authorization token.
+        "403":
+          description: |
+            `Forbidden`
+
+            **This error occurs when students/members of the public try to make a reservation for a seminar while they are still under the 30 days penalty. This penaty is imposed when they cancel their reservations 3 times within a month and with less than 24 hours of notice given.**
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_403'
+              example:
+                forbidden: 'You cannot make any reservations now: Penalty status is active'
+      security:
+      - bearerAuth: []
+  /reservations/{reservation_id}:
+    get:
+      tags:
+      - reservations
+      summary: Gets a reservation by its id.
+      operationId: getReservationById
+      parameters:
+      - name: reservation_id
+        in: path
+        description: Unique identifier for a reservation.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          example: 1
+      responses:
+        "200":
+          description: |
+            `OK`
+
+            **Reservation successfully returned.**
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reservation'
+              example:
+                id: 1
+                url: http://comp3220.ecs.soton.ac.uk/reservations/1
+                bookings: 3
+                seminar: http://comp3220.ecs.soton.ac.uk/seminars/1
+          links:
+            Cancel Reservation:
+              operationRef: '#/reservations/{reservation_id}/delete'
+              parameters:
+                Authorization: $request.header.Authorization
+                reservation_id: $response.body#/id
+              description: |
+                The `id` value returned in the response can be used as the `reservation_id` parameter in `DELETE /reservations/{reservation_id}`.
+    delete:
+      tags:
+      - reservations
+      summary: Cancel a reservation.
+      operationId: cancelReservation
+      parameters:
+      - name: reservation_id
+        in: path
+        description: Unique identifier for a reservation.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          example: 1
+      responses:
+        "204":
+          description: |
+            `No Content`
+
+            **Reservation successfully cancelled.**
+        "401":
+          description: |
+            `Unauthorized`
+
+            **This error occurs when members of the public or students attempt to cancel other attendees' reservations.**
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+              example:
+                Authorization failed: Permission denied.
+      security:
+      - bearerAuth: []
+components:
+  schemas:
+    Seminar:
+      required:
+      - date
+      - endTime
+      - name
+      - room
+      - seats
+      - startTime
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for this seminar
+        url:
+          type: string
+          description: URL for this seminar
+        seats:
+          type: integer
+          description: Maximum number of people that can attend this seminar
+        name:
+          type: string
+          description: Name of this seminar
+        room:
+          type: string
+          description: The URL of the room to be booked for this seminar
+        date:
+          type: string
+          description: Date for this seminar in 'dd/mm/yyyy' format
+        startTime:
+          type: string
+          description: Start time of seminar in 24-hour clock format
+        endTime:
+          type: string
+          description: End time of seminar in 24-hour clock format
+        reservations:
+          type: string
+          description: URL for the list of reservations made for this seminar
+    Reservation:
+      required:
+      - bookings
+      - seminar
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for this reservation
+        url:
+          type: string
+          description: URL for this reservation
+        bookings:
+          type: integer
+          description: Number of booking seats
+        seminar:
+          type: string
+          description: URL for a seminar where this reservation is made for
+    inline_response_400:
+      type: object
+      properties:
+        seats:
+          type: string
+        name:
+          type: string
+        room:
+          type: string
+        date:
+          type: string
+        startTime:
+          type: string
+        endTime:
+          type: string
+    inline_response_401:
+      type: object
+      properties:
+        authorization:
+          type: string
+    inline_response_400_1:
+      type: object
+      properties:
+        bookings:
+          type: string
+        seminar:
+          type: string
+    inline_response_403:
+      type: object
+      properties:
+        forbidden:
+          type: string
+  responses:
+    ReservationBody:
+      description: A reservation object
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Reservation'
+      links:
+        GetReservation:
+          operationId: getReservationById
+          parameters:
+            userId: $response.body#/id
+          description: |
+            The `id` value returned in the response can be used as the `reservation_id` parameter in `GET /reservations/{reservation_id}`.
+        Cancel Reservation:
+          operationRef: '#/reservations/{reservation_id}/delete'
+          parameters:
+            Authorization: $request.header.Authorization
+            reservation_id: $response.body#/id
+          description: |
+            The `id` value returned in the response can be used as the `reservation_id` parameter in `DELETE /reservations/{reservation_id}`.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
