@@ -67,8 +67,10 @@
 
 		<main>
 			<article>
+				<header>
+					<h2>API Endpoints</h2>
+				</header>
 				<section>
-
 					<header>
 						<h2 id="rooms">Rooms</h2>
 					</header>
@@ -83,23 +85,25 @@
 
 						<section class="endpoint-description">
 							<figure>
-								<figcaption>URL Parameters</figcaption>
+								<figcaption><h4>Parameters</h4></figcaption>
 								<table>
 									<tr>
-									    <th>Parameters</th>
+									    <th>Name</th>
 									    <th>Type</th>
+									    <th>Location</th>
 									    <th>Description</th>
 							  		</tr>
 								  	<tr>
 									    <td>room_id</td>
 									    <td>integer</td>
+									    <td>URL</td>
 									    <td>Unique id for a room</td>
 								  	</tr>
 								</table>	
 							</figure>
 
 							<figure>
-								<figcaption>Response Fields</figcaption>
+								<figcaption><h4>Response Fields</h4></figcaption>
 								<table>
 		  							<tr>
 									    <th>Field</th>
@@ -138,16 +142,16 @@
 						<section class="api-examples">
 
 							<figure>
-								<figcaption>Example Request</figcaption>
+								<figcaption><h4>Example Request</h4></figcaption>
 								
-								<pre>GET http://comp3220.ecs.soton.ac.uk/rooms/1</pre>
+								<pre><code>GET http://comp3220.ecs.soton.ac.uk/rooms/1</code></pre>
 							</figure>
 
 							<figure>
-								<figcaption>Example Response</figcaption>
+								<figcaption><h4>Example Response</h4></figcaption>
 
 								
-								<pre>200 OK
+								<pre><code>200 OK
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/rooms/1",
@@ -155,7 +159,7 @@
 									    "description": "Common Learning Space: Murray Lecture Room G",
 									    "capacity": 10,
 									    "building": "http://comp3220.ecs.soton.ac.uk/buildings/64"
-									}</pre>
+									}</code></pre>
 
 							</figure>
 						</section>
@@ -169,9 +173,9 @@
 							<p>Retrieve the information of all rooms</p>
 						</header>
 
-						<div class="endpoint-description">
+						<section class="endpoint-description">
 							<figure>
-								<figcaption>Response Fields</figcaption>
+								<figcaption><h4>Response Fields</h4></figcaption>
 
 								<p>The response will be a list of rooms, each with the following fields: </p>
 								<table>
@@ -207,21 +211,21 @@
 								  	</tr>
 								</table>
 							</figure>
-						</div>
+						</section>
 						
 						<section class="api-examples">
 
 							<figure>
-								<figcaption>Example Request</figcaption>
+								<figcaption><h4>Example Request</h4></figcaption>
 
 								
-								<pre>GET http://comp3220.ecs.soton.ac.uk/rooms</pre>
+								<pre><code>GET http://comp3220.ecs.soton.ac.uk/rooms</code></pre>
 
 							</figure>
 							<figure>
-								<figcaption>Example Response</figcaption>
+								<figcaption><h4>Example Response</h4></figcaption>
 								
-								<pre>200 OK
+								<pre><code>200 OK
 
 									[
 									    {
@@ -238,8 +242,11 @@
 									        "capacity": 19,
 									        "building": "http://comp3220.ecs.soton.ac.uk/buildings/96"
 									    },
+
 									    ...
-								  	]</pre>
+
+									]</code></pre>
+
 							</figure>
 						</section>
 					</section>
@@ -251,9 +258,32 @@
 							<p>Creates a new room</p>
 						</header>
 
-						<div class="endpoint-description">
+						<section class="endpoint-description">
+
 							<figure>
-								<figcaption>Request Fields</figcaption>
+								<figcaption>
+									<h4>Parameters</h4>
+								</figcaption>
+
+								<table>
+		  							<tr>
+									    <th>Name</th>
+									    <th>Type</th>
+									    <th>Location</th>
+									    <th>Description</th>
+							  		</tr>
+
+							  		<tr>
+							  			<td>Authorization</td>
+							  			<td>string</td>
+							  			<td>Header</td>
+							  			<td>Client's authorization token</td>
+							  		</tr>
+							  	</table>
+
+							</figure>
+							<figure>
+								<figcaption><h4>Request Fields</h4></figcaption>
 								<table>
 		  							<tr>
 									    <th>Field</th>
@@ -284,7 +314,7 @@
 							</figure>
 
 							<figure>
-								<figcaption>Response Fields</figcaption>
+								<figcaption><h4>Response Fields</h4></figcaption>
 								
 								<p>The response will be a list of rooms, each with the following fields: </p>
 								<table>
@@ -320,29 +350,28 @@
 								  	</tr>
 								</table>
 							</figure>
-						</div>
+						</section>
 
 						<section class="api-examples">
 							<figure>
-								<figcaption>Example Request</figcaption>
+								<figcaption><h4>Example Request</h4></figcaption>
 
 								
-								<pre>POST http://comp3220.ecs.soton.ac.uk/rooms/
+								<pre><code>POST http://comp3220.ecs.soton.ac.uk/rooms/
 
 									{
-									    "url": "http://comp3220.ecs.soton.ac.uk/rooms/200",
 									    "number": "200-3220",
 									    "description": "CLS for ECS students",
 									    "capacity": 44,
 									    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
-									}</pre>
+									}</code></pre>
 							</figure>
 
 							<figure>
-								<figcaption>Example Response</figcaption>
+								<figcaption><h4>Example Response</h4></figcaption>
 
 								
-								<pre>201 Created
+								<pre><code>201 Created
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/rooms/265",
@@ -350,7 +379,7 @@
 									    "description": "CLS for ECS students",
 									    "capacity": 44,
 									    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
-									}</pre>
+									}</code></pre>
 							</figure>	
 						</section>
 											
@@ -362,408 +391,76 @@
 
 							<p><code>PUT http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
 							<p><code>PATCH http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
-
 							<p>There are two methods that can be used to update the information for a room: <code>PUT</code> and <code>PATCH</code>.
-								<code>PUT</code> requires all of the information stated in the Request Fields to be present, while <code>PATCH</code> does not require all of stated in the Request Fields to be present.
-							</p>
-
+								<code>PUT</code> requires all of the information stated in the Request Fields to be present, while <code>PATCH</code> does not require all of stated fields to be present. In both cases, the format for Parameters, Request Fields and Response Fields are the same.</p>
 						</header>
 
-						<p>In both cases, the format for URL parameters, Request Fields and Response Fields are the same</p>
-
-						<figure>
-							<figcaption>URL Parameters</figcaption>
-							<table>
-								<tr>
-								    <th>Parameters</th>
-								    <th>Type</th>
-								    <th>Description</th>
-						  		</tr>
-							  	<tr>
-								    <td>room_id</td>
-								    <td>integer</td>
-								    <td>Unique id for a room</td>
-							  	</tr>
-							</table>	
-						</figure>
-
-
-						<figure>
-							<figcaption>Request Fields</figcaption>
-							<table>
-	  							<tr>
-								    <th>Field</th>
-								    <th>Type</th>
-								    <th>Description</th>
-						  		</tr>
-						  		<tr>
-								    <td>building</td>
-								    <td>string</td>
-								    <td>Building URL in which this room is located in</td>
-							  	</tr>
-							  	<tr>
-								    <td>capacity</td>
-								    <td>integer</td>
-								    <td>Maximum number of people in a room</td>
-							  	</tr>
-							  	<tr>
-								    <td>number</td>
-								    <td>string</td>
-								    <td>Identifier for this room</td>
-							  	</tr>
-							  	<tr>
-								    <td>description</td>
-								    <td>string</td>
-								    <td>Describes the functionality and usage of the room</td>
-							  	</tr>
-							</table>
-						</figure>
-
-						<figure>
-							<figcaption>Response Fields</figcaption>
-							
-							<p>The response will be a list of rooms, each with the following fields: </p>
-							<table>
-	  							<tr>
-								    <th>Field</th>
-								    <th>Type</th>
-								    <th>Description</th>
-						  		</tr>
-							  	<tr>
-								    <td>url</td>
-								    <td>string</td>
-								    <td>URL for this room</td>
-							  	</tr>
-							  	<tr>
-								    <td>number</td>
-								    <td>string</td>
-								    <td>Identifier for this room</td>
-							  	</tr>
-							  	<tr>
-								    <td>description</td>
-								    <td>string</td>
-								    <td>Describes the functionality and usage of the room</td>
-							  	</tr>
-							  	<tr>
-								    <td>capacity</td>
-								    <td>integer</td>
-								    <td>Maximum number of people in a room</td>
-							  	</tr>
-							  	<tr>
-								    <td>building</td>
-								    <td>string</td>
-								    <td>Building URL in which this room is located in</td>
-							  	</tr>
-							</table>
-						</figure>
-						
-						<section class="api-examples">
-							
+						<section class="endpoint-description">
 							<figure>
-								<figcaption>Example Request</figcaption>
-
-								
-								<pre>PUT/PATCH http://comp3220.ecs.soton.ac.uk/rooms/265
-
-									{
-									    "number": "200-3220",
-									    "description": "CLS for ECS students",
-									    "capacity": 50,
-									    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
-									}</pre>
-							</figure>
-
-							<figure>
-								<figcaption>Example Response</figcaption>
-								
-								<pre>200 OK
-
-									{
-									    "url": "http://comp3220.ecs.soton.ac.uk/rooms/265",
-									    "number": "200-3220",
-									    "description": "CLS for ECS students",
-									    "capacity": 50,
-									    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
-									}</pre>
-							</figure>
-						</section>
-					</section>
-
-					<section class="endpoint">
-						<header>
-							<h3 id="delete-room">Delete room</h3>
-							<p><code>DELETE http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
-							<p>Delete a room</p>
-						</header>
-
-						<div class="endpoint-description">
-							<figure>
-								<figcaption>URL Parameters</figcaption>
+								<figcaption><h4>Parameters</h4></figcaption>
 								<table>
 									<tr>
-									    <th>Parameter</th>
+									    <th>Name</th>
 									    <th>Type</th>
+									    <th>Location</th>
 									    <th>Description</th>
 							  		</tr>
 								  	<tr>
 									    <td>room_id</td>
 									    <td>integer</td>
-									    <td>Unique id for this room</td>
+									    <td>URL</td>
+									    <td>Unique id for a room</td>
 								  	</tr>
-								</table>	
-							</figure>
 
-						</div>
-
-						<section class="api-examples">
-							<figure>
-								<figcaption>Example Request</figcaption>
-
-								
-								<pre>DELETE http://comp3220.ecs.soton.ac.uk/rooms/2</pre>
-							</figure>
-							<figure>
-								<figcaption>Example Response</figcaption>
-
-								
-								<pre>204 No Content</pre>
-							</figure>
-
-						</section>
-					</section>
-
-				<section>
-					<header>
-						<h2 id="buildings">Buildings</h2>
-					</header>
-
-					<section class="endpoint">
-						<header>
-							<h3 id="get-building">Get building</h3>
-							<p><code>GET http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></p>
-							<p>Retrieve the information about a building</p>
-						</header>
-
-						<div class="endpoint-description">
-							<figure>
-								<figcaption>URL Parameters</figcaption>
-								<table>
-									<tr>
-									    <th>Parameters</th>
-									    <th>Type</th>
-									    <th>Description</th>
-							  		</tr>
 								  	<tr>
-									    <td>building_id</td>
-									    <td>integer</td>
-									    <td>Unique id for a building</td>
+									    <td>Authorization</td>
+									    <td>string</td>
+									    <td>Header</td>
+									    <td>Client's authorization token</td>
 								  	</tr>
 								</table>	
 							</figure>
 
+
 							<figure>
-								<figcaption>Response Fields</figcaption>
+								<figcaption><h4>Request Fields <sup>*</sup> </h4></figcaption>
 								<table>
 		  							<tr>
 									    <th>Field</th>
 									    <th>Type</th>
 									    <th>Description</th>
 							  		</tr>
-								  	<tr>
-									    <td>url</td>
-									    <td>field</td>
-									    <td>URL for this building</td>
-								  	</tr>
-								  	<tr>
-									    <td>name</td>
+							  		<tr>
+									    <td>building</td>
 									    <td>string</td>
-									    <td>Name of the building</td>
+									    <td>Building URL in which this room is located in</td>
 								  	</tr>
 								  	<tr>
-									    <td>number</td>
-									    <td>string</td>
-									    <td>Identifier for this building</td>
-								  	</tr>
-								  	<tr>
-									    <td>latitude</td>
-									    <td>decimal</td>
-									    <td>Latitude of this building</td>
-								  	</tr>
-								  	<tr>
-									    <td>longitude</td>
-									    <td>decimal</td>
-									    <td>Longitude of this building</td>
-								  	</tr>
-								  	<tr>
-									    <td>site</td>
-									    <td>field</td>
-									    <td>URL for the site in which this building is located in</td>
-								  	</tr>
-								  	<tr>
-									    <td>rooms</td>
-									    <td>field</td>
-									    <td>URL for the list of rooms located in this building</td>
-								  	</tr>
-								</table>
-							</figure>
-						</div>
-						
-
-						<section class="api-examples">
-							
-							<figure>
-								<figcaption>Example Request</figcaption>
-
-								
-								<pre>GET http://comp3220.ecs.soton.ac.uk/buildings/2</pre>
-
-							</figure>
-							<figure>
-								<figcaption>Example Response</figcaption>
-
-								
-								<pre>200 OK
-
-									{
-									    "url": "http://comp3220.ecs.soton.ac.uk/buildings/2",
-									    "name": "Cycle store near B39",
-									    "number": "39A",
-									    "latitude": "50.937",
-									    "longitude": "-1.399",
-									    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
-									    "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/2/rooms"
-									}</pre>
-								
-							</figure>
-
-						</section>
-					</section>
-
-					<section class="endpoint">
-
-						<header>
-							<h3 id="get-building-list">Get list of buildings</h3>
-							<p><code>GET http://comp3220.ecs.soton.ac.uk/buildings/</code></p>
-							<p>Retrieve the information of all buildings</p>
-						</header>
-
-						<div class="endpoint-description">
-							<figure>
-								<figcaption>Response Fields</figcaption>
-								<p>The response will be a list of buildings, each with the following fields:</p>
-
-								<table>
-		  							<tr>
-									    <th>Field</th>
-									    <th>Type</th>
-									    <th>Description</th>
-							  		</tr>
-								  	<tr>
-									    <td>url</td>
-									    <td>field</td>
-									    <td>URL for this building</td>
-								  	</tr>
-								  	<tr>
-									    <td>name</td>
-									    <td>string</td>
-									    <td>Name of the building</td>
-								  	</tr>
-								  	<tr>
-									    <td>number</td>
-									    <td>string</td>
-									    <td>Identifier for this building</td>
-								  	</tr>
-								  	<tr>
-									    <td>latitude</td>
-									    <td>decimal</td>
-									    <td>Latitude of this building</td>
-								  	</tr>
-								  	<tr>
-									    <td>longitude</td>
-									    <td>decimal</td>
-									    <td>Longitude of this building</td>
-								  	</tr>
-								  	<tr>
-									    <td>site</td>
-									    <td>field</td>
-									    <td>URL for the site in which this building is located in</td>
-								  	</tr>
-								  	<tr>
-									    <td>rooms</td>
-									    <td>field</td>
-									    <td>URL for the list of rooms located in this building</td>
-								  	</tr>
-								</table>
-							</figure>
-						</div>
-						
-						<section class="api-examples">
-
-							<figure>
-								<figcaption>Example Request</figcaption>
-
-								
-								<pre>GET http://comp3220.ecs.soton.ac.uk/buildings/2</pre>
-							</figure>
-							<figure>
-								<figcaption>Example Response</figcaption>
-
-								
-								<pre>200 OK
-
-									[
-									    {
-									        "url": "http://comp3220.ecs.soton.ac.uk/buildings/1",
-									        "name": "158 Mayfield Road",
-									        "number": "1622",
-									        "latitude": "50.937",
-									        "longitude": "-1.390",
-									        "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
-									        "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/1/rooms"
-									    },
-									    {
-									        "url": "http://comp3220.ecs.soton.ac.uk/buildings/2",
-									        "name": "Cycle store near B39",
-									        "number": "39A",
-									        "latitude": "50.937",
-									        "longitude": "-1.399",
-									        "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
-									        "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/2/rooms"
-									    },
-
-									    ...
-									]</pre>
-							</figure>
-
-						</section>
-					</section>
-
-					<section class="endpoint">
-						<header>
-							<h3 id="get-building-rooms-list">Get list of rooms in a building</h3>
-							<p><code>GET http://comp3220.ecs.soton.ac.uk/buildings/{building_id}/rooms</code></p>
-							<p>Returns the list of rooms located within a specific building</p>
-						</header>
-
-						<figure>
-								<figcaption>URL Parameters</figcaption>
-								<table>
-									<tr>
-									    <th>Parameters</th>
-									    <th>Type</th>
-									    <th>Description</th>
-							  		</tr>
-								  	<tr>
-									    <td>building_id</td>
+									    <td>capacity</td>
 									    <td>integer</td>
-									    <td>Unique id for a building</td>
+									    <td>Maximum number of people in a room</td>
+								  	</tr>
+								  	<tr>
+									    <td>number</td>
+									    <td>string</td>
+									    <td>Identifier for this room</td>
+								  	</tr>
+								  	<tr>
+									    <td>description</td>
+									    <td>string</td>
+									    <td>Describes the functionality and usage of the room</td>
 								  	</tr>
 								</table>
-						</figure>
 
-						<p>The response will be a list of rooms, each with the following fields</p>
-						<figure>
-								<figcaption>Response Fields</figcaption>
+								<footer>
+									*The request fields are mandatory for PUT requests only.
+								</footer>
+							</figure>
+
+							<figure>
+								<figcaption><h4>Response Fields</h4></figcaption>
+								
+								<p>The response will be a list of rooms, each with the following fields: </p>
 								<table>
 		  							<tr>
 									    <th>Field</th>
@@ -797,43 +494,388 @@
 								  	</tr>
 								</table>
 							</figure>
+						</section>
 
-							<section class="api-examples">
+						<section class="api-examples">
+							
+							<figure>
+								<figcaption><h4>Example Request</h4></figcaption>
+								<pre><code>PUT/PATCH http://comp3220.ecs.soton.ac.uk/rooms/265
+
+									{
+									    "number": "200-3220",
+									    "description": "CLS for ECS students",
+									    "capacity": 50,
+									    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
+									}</code></pre>
+							</figure>
+
+							<figure>
+								<figcaption><h4>Example Response</h4></figcaption>
 								
-								<figure>
-									<hfigcapti</
-									</header>
+								<pre><code>200 OK
 
-									
-									<pre>GET http://comp3220.ecs.soton.ac.uk/buildings/187/rooms
-</pre>
-								</figure>
+									{
+									    "url": "http://comp3220.ecs.soton.ac.uk/rooms/265",
+									    "number": "200-3220",
+									    "description": "CLS for ECS students",
+									    "capacity": 50,
+									    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
+									}</code></pre>
+							</figure>
+						</section>
+					</section>
 
-								<figure>
-									<heExamplefigcaption	</
+					<section class="endpoint">
+						<header>
+							<h3 id="delete-room">Delete room</h3>
+							<p><code>DELETE http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></p>
+							<p>Delete a room</p>
+						</header>
 
-									
-									<pre>200 OK
+						<section class="endpoint-description">
+							<figure>
+								<figcaption><h4>Parameters</h4></figcaption>
+								<table>
+									<tr>
+									    <th>Namer</th>
+									    <th>Type</th>
+									    <th>Location</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>room_id</td>
+									    <td>integer</td>
+									    <td>URL</td>
+									    <td>Unique id for this room</td>
+								  	</tr>
+								  	<tr>
+									    <td>Authorization</td>
+									    <td>string</td>
+									    <td>Header</td>
+									    <td>Client's authorization token</td>
+								  	</tr>
+								</table>	
+							</figure>
 
-										[
-										    {
-										        "url": "http://comp3220.ecs.soton.ac.uk/rooms/265",
-										        "number": "200-3220",
-										        "description": "CLS for ECS students",
-										        "capacity": 58
-										    },
-										    {
-										        "url": "http://comp3220.ecs.soton.ac.uk/rooms/268",
-										        "number": "123",
-										        "description": "CLS for ECS students",
-										        "capacity": 44
-										    },
+						</section>
 
-										    ...
-										]
-</pre>
-								</figure>
-							</section>
+						<section class="api-examples">
+							<figure>
+								<figcaption><h4>Example Request</h4></figcaption>
+
+								
+								<pre><code>DELETE http://comp3220.ecs.soton.ac.uk/rooms/2</code></pre>
+							</figure>
+							<figure>
+								<figcaption><h4>Example Response</h4></figcaption>
+
+								
+								<pre><code>204 No Content</code></pre>
+							</figure>
+
+						</section>
+					</section>
+				</section>
+
+				<section>
+					<header>
+						<h2 id="buildings">Buildings</h2>
+					</header>
+
+					<section class="endpoint">
+						<header>
+							<h3 id="get-building">Get building</h3>
+							<p><code>GET http://comp3220.ecs.soton.ac.uk/buildings/{building_id}</code></p>
+							<p>Retrieve the information about a building</p>
+						</header>
+
+						<section class="endpoint-description">
+							<figure>
+								<figcaption><h4>Parameters</h4></figcaption>
+								<table>
+									<tr>
+									    <th>Name</th>
+									    <th>Type</th>
+									    <th>Location</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>building_id</td>
+									    <td>integer</td>
+									    <td>URL</td>
+									    <td>Unique id for a building</td>
+								  	</tr>
+								</table>	
+							</figure>
+
+							<figure>
+								<figcaption><h4>Response Fields</h4></figcaption>
+								<table>
+		  							<tr>
+									    <th>Field</th>
+									    <th>Type</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>url</td>
+									    <td>string</td>
+									    <td>URL for this building</td>
+								  	</tr>
+								  	<tr>
+									    <td>name</td>
+									    <td>string</td>
+									    <td>Name of the building</td>
+								  	</tr>
+								  	<tr>
+									    <td>number</td>
+									    <td>string</td>
+									    <td>Identifier for this building</td>
+								  	</tr>
+								  	<tr>
+									    <td>latitude</td>
+									    <td>decimal</td>
+									    <td>Latitude of this building</td>
+								  	</tr>
+								  	<tr>
+									    <td>longitude</td>
+									    <td>decimal</td>
+									    <td>Longitude of this building</td>
+								  	</tr>
+								  	<tr>
+									    <td>site</td>
+									    <td>string</td>
+									    <td>URL for the site in which this building is located in</td>
+								  	</tr>
+								  	<tr>
+									    <td>rooms</td>
+									    <td>string</td>
+									    <td>URL for the list of rooms located in this building</td>
+								  	</tr>
+								</table>
+							</figure>
+						</section>
+						
+
+						<section class="api-examples">
+							
+							<figure>
+								<figcaption><h4>Example Request</h4></figcaption>
+
+								
+								<pre><code>GET http://comp3220.ecs.soton.ac.uk/buildings/2</code></pre>
+
+							</figure>
+							<figure>
+								<figcaption><h4>Example Response</h4></figcaption>
+
+								
+								<pre><code>200 OK
+
+									{
+									    "url": "http://comp3220.ecs.soton.ac.uk/buildings/2",
+									    "name": "Cycle store near B39",
+									    "number": "39A",
+									    "latitude": "50.937",
+									    "longitude": "-1.399",
+									    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
+									    "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/2/rooms"
+									}</code></pre>
+								
+							</figure>
+
+						</section>
+					</section>
+
+					<section class="endpoint">
+
+						<header>
+							<h3 id="get-building-list">Get list of buildings</h3>
+							<p><code>GET http://comp3220.ecs.soton.ac.uk/buildings/</code></p>
+							<p>Retrieve the information of all buildings</p>
+						</header>
+
+						<section class="endpoint-description">
+							<figure>
+								<figcaption><h4>Response Fields</h4></figcaption>
+								<p>The response will be a list of buildings, each with the following fields:</p>
+
+								<table>
+		  							<tr>
+									    <th>Field</th>
+									    <th>Type</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>url</td>
+									    <td>string</td>
+									    <td>URL for this building</td>
+								  	</tr>
+								  	<tr>
+									    <td>name</td>
+									    <td>string</td>
+									    <td>Name of the building</td>
+								  	</tr>
+								  	<tr>
+									    <td>number</td>
+									    <td>string</td>
+									    <td>Identifier for this building</td>
+								  	</tr>
+								  	<tr>
+									    <td>latitude</td>
+									    <td>decimal</td>
+									    <td>Latitude of this building</td>
+								  	</tr>
+								  	<tr>
+									    <td>longitude</td>
+									    <td>decimal</td>
+									    <td>Longitude of this building</td>
+								  	</tr>
+								  	<tr>
+									    <td>site</td>
+									    <td>string</td>
+									    <td>URL for the site in which this building is located in</td>
+								  	</tr>
+								  	<tr>
+									    <td>rooms</td>
+									    <td>string</td>
+									    <td>URL for the list of rooms located in this building</td>
+								  	</tr>
+								</table>
+							</figure>
+						</section>
+						
+						<section class="api-examples">
+
+							<figure>
+								<figcaption><h4>Example Request</h4></figcaption>
+
+								
+								<pre><code>GET http://comp3220.ecs.soton.ac.uk/buildings/2</code></pre>
+							</figure>
+							<figure>
+								<figcaption><h4>Example Response</h4></figcaption>
+
+								
+								<pre><code>200 OK
+
+									[
+									    {
+									        "url": "http://comp3220.ecs.soton.ac.uk/buildings/1",
+									        "name": "158 Mayfield Road",
+									        "number": "1622",
+									        "latitude": "50.937",
+									        "longitude": "-1.390",
+									        "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
+									        "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/1/rooms"
+									    },
+									    {
+									        "url": "http://comp3220.ecs.soton.ac.uk/buildings/2",
+									        "name": "Cycle store near B39",
+									        "number": "39A",
+									        "latitude": "50.937",
+									        "longitude": "-1.399",
+									        "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
+									        "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/2/rooms"
+									    },
+
+									    ...
+									]</code></pre>
+							</figure>
+
+						</section>
+					</section>
+
+					<section class="endpoint">
+						<header>
+							<h3 id="get-building-rooms-list">Get list of rooms in a building</h3>
+							<p><code>GET http://comp3220.ecs.soton.ac.uk/buildings/{building_id}/rooms</code></p>
+							<p>Returns the list of rooms located within a specific building</p>
+						</header>
+
+						<section class="endpoint-description">
+							<figure>
+								<figcaption><h4>Parameters</h4></figcaption>
+								<table>
+									<tr>
+									    <th>Name</th>
+									    <th>Type</th>
+									    <th>Location</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>building_id</td>
+									    <td>integer</td>
+									    <td>URL</td>
+									    <td>Unique id for a building</td>
+								  	</tr>
+								</table>
+							</figure>
+
+							<p>The response will be a list of rooms, each with the following fields</p>
+
+							<figure>
+								<figcaption><h4>Response Fields</h4></figcaption>
+								<table>
+		  							<tr>
+									    <th>Field</th>
+									    <th>Type</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>url</td>
+									    <td>string</td>
+									    <td>URL for this room</td>
+								  	</tr>
+								  	<tr>
+									    <td>number</td>
+									    <td>string</td>
+									    <td>Identifier for this room</td>
+								  	</tr>
+								  	<tr>
+									    <td>description</td>
+									    <td>string</td>
+									    <td>Describes the functionality and usage of the room</td>
+								  	</tr>
+								  	<tr>
+									    <td>capacity</td>
+									    <td>integer</td>
+									    <td>Maximum number of people in a room</td>
+								  	</tr>
+								</table>
+							</figure>
+						</section>
+						
+
+						<section class="api-examples">
+			
+							<figure>
+								<figcaption><h4>Example Request</h4></figcaption>
+								<pre><code>GET http://comp3220.ecs.soton.ac.uk/buildings/187/room</code></pre>
+							</figure>
+
+							<figure>
+								<figcaption><h4>Example Response</h4></figcaption>
+								<pre><code>200 OK
+
+									[
+									    {
+									        "url": "http://comp3220.ecs.soton.ac.uk/rooms/265",
+									        "number": "200-3220",
+									        "description": "CLS for ECS students",
+									        "capacity": 58
+									    },
+									    {
+									        "url": "http://comp3220.ecs.soton.ac.uk/rooms/268",
+									        "number": "123",
+									        "description": "CLS for ECS students",
+									        "capacity": 44
+									    },
+
+									    ...
+									]</code></pre>	
+							</figure>
+						</section>
 					</section>
 
 
@@ -844,25 +886,34 @@
 							<p>Creates a new building</p>
 						</header>
 
-						<div class="endpoint-description">
+						<section class="endpoint-description">
+
 							<figure>
-								<figcaption>URL Parameters</figcaption>
-								<table></table>	
+								<figcaption><h4>Parameters</h4></figcaption>
+								<table>
+									<tr>
+									    <th>Name</th>
+									    <th>Type</th>
+									    <th>Location</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>Authorization</td>
+									    <td>string</td>
+									    <td>Header</td>
+									    <td>Client's authorization token</td>
+								  	</tr>
+								</table>
 							</figure>
 
 							<figure>
-								<figcaption>Request Fields</figcaption>
+								<figcaption><h4>Request Fields</h4></figcaption>
 								<table>
 		  							<tr>
 									    <th>Field</th>
 									    <th>Type</th>
 									    <th>Description</th>
 							  		</tr>
-								  	<tr>
-									    <td>url</td>
-									    <td>field</td>
-									    <td>URL for this building</td>
-								  	</tr>
 								  	<tr>
 									    <td>name</td>
 									    <td>string</td>
@@ -885,19 +936,14 @@
 								  	</tr>
 								  	<tr>
 									    <td>site</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for the site in which this building is located in</td>
-								  	</tr>
-								  	<tr>
-									    <td>rooms</td>
-									    <td>field</td>
-									    <td>URL for the list of rooms located in this building</td>
 								  	</tr>
 								</table>
 							</figure>
 
 							<figure>
-								<figcaption>Response Fields</figcaption>
+								<figcaption><h4>Response Fields</h4></figcaption>
 								
 								<table>
 		  							<tr>
@@ -907,7 +953,7 @@
 							  		</tr>
 								  	<tr>
 									    <td>url</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for this building</td>
 								  	</tr>
 								  	<tr>
@@ -932,32 +978,40 @@
 								  	</tr>
 								  	<tr>
 									    <td>site</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for the site in which this building is located in</td>
 								  	</tr>
 								  	<tr>
 									    <td>rooms</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for the list of rooms located in this building</td>
 								  	</tr>
 								</table>
 							</figure>
-						</div>
+						</section>
 											
 						<section class="api-examples">
 
 							<figure>
-								<figcaption>Example Request</figcaption>
+								<figcaption><h4>Example Request</h4></figcaption>
 
 								
-								<pre>POST http://comp3220.ecs.soton.ac.uk/buildings/</pre>
+								<pre><code>POST http://comp3220.ecs.soton.ac.uk/buildings/
+
+									{
+									    "name": "547 Burgess Road",
+									    "number": "547",
+									    "latitude": "15.670",
+									    "longitude": "-11.345",
+									    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
+									}</code></pre>
 							</figure>
 
 							<figure>
-								<figcaption>Example Response</figcaption>
+								<figcaption><h4>Example Response</h4></figcaption>
 
 								
-								<pre>201 Created
+								<pre><code>201 Created
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/buildings/200",
@@ -967,7 +1021,7 @@
 									    "longitude": "-11.345",
 									    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
 									    "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/200/rooms"
-									}</pre>
+									}</code></pre>
 							</figure>
 							
 						</section>
@@ -981,32 +1035,81 @@
 							<p><code>PATCH http://comp3220.ecs.soton.ac.uk/rooms/{building_id}</code></p>
 
 							<p>There are two methods that can be used to update the information for a building: <code>PUT</code> and <code>PATCH</code>.
-								<code>PUT</code> requires all of the information stated in the Request Fields to be present, while <code>PATCH</code> does not require all of stated in the Request Fields to be present.
+								<code>PUT</code> requires all of the information stated in the Request Fields to be present, while <code>PATCH</code> does not require all of stated fields. In both cases, the format for Parameters, Request Fields and Response Fields are the same.
 							</p>
 						</header>
 
-						<p>In both cases, the format for URL parameters, Request Fields and Response Fields are the same</p>
+						<section class="endpoint-description">
+							<figure>
+								<figcaption><h4>Parameters</h4></figcaption>
+								<table>
+									<tr>
+									    <th>Name</th>
+									    <th>Type</th>
+									    <th>Location</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>building_id</td>
+									    <td>integer</td>
+									    <td>URL</td>
+									    <td>Unique id for a room</td>
+								  	</tr>
+								  	<tr>
+									    <td>Authorization</td>
+									    <td>string</td>
+									    <td>Header</td>
+									    <td>Client's authorization token</td>
+								  	</tr>
+								</table>	
+							</figure>
 
-						<figure>
-							<figcaption>URL Parameters</figcaption>
-							<table>
-								<tr>
-								    <th>Parameters</th>
-								    <th>Type</th>
-								    <th>Description</th>
-						  		</tr>
-							  	<tr>
-								    <td>building_id</td>
-								    <td>integer</td>
-								    <td>Unique id for a room</td>
-							  	</tr>
-							</table>	
-						</figure>
 
+							<figure>
+								<figcaption><h4>Request Fields <sup>*</sup></h4></figcaption>
+								<table>
+		  							<tr>
+									    <th>Field</th>
+									    <th>Type</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>name</td>
+									    <td>string</td>
+									    <td>Name of the building</td>
+								  	</tr>
+								  	<tr>
+									    <td>number</td>
+									    <td>string</td>
+									    <td>Identifier for this building</td>
+								  	</tr>
+								  	<tr>
+									    <td>latitude</td>
+									    <td>decimal</td>
+									    <td>Latitude of this building</td>
+								  	</tr>
+								  	<tr>
+									    <td>longitude</td>
+									    <td>decimal</td>
+									    <td>Longitude of this building</td>
+								  	</tr>
+								  	<tr>
+									    <td>site</td>
+									    <td>string</td>
+									    <td>URL for the site in which this building is located in</td>
+								  	</tr>
+								</table>
 
-						<figure>
-							<figcaption>Request Fields</figcaption>
-							<table>
+								<footer>
+									*The request fields are mandatory for PUT requests only.
+								</footer>
+							</figure>
+
+							<figure>
+								<figcaption><h4>Response Fields</h4></figcaption>
+								
+								<p>The response will be a list of rooms, each with the following fields: </p>
+								<table>
 		  							<tr>
 									    <th>Field</th>
 									    <th>Type</th>
@@ -1014,7 +1117,7 @@
 							  		</tr>
 								  	<tr>
 									    <td>url</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for this building</td>
 								  	</tr>
 								  	<tr>
@@ -1039,72 +1142,25 @@
 								  	</tr>
 								  	<tr>
 									    <td>site</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for the site in which this building is located in</td>
 								  	</tr>
 								  	<tr>
 									    <td>rooms</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for the list of rooms located in this building</td>
 								  	</tr>
 								</table>
-						</figure>
-
-						<figure>
-							<figcaption>Response Fields</figcaption>
-							
-							<p>The response will be a list of rooms, each with the following fields: </p>
-							<table>
-		  							<tr>
-									    <th>Field</th>
-									    <th>Type</th>
-									    <th>Description</th>
-							  		</tr>
-								  	<tr>
-									    <td>url</td>
-									    <td>field</td>
-									    <td>URL for this building</td>
-								  	</tr>
-								  	<tr>
-									    <td>name</td>
-									    <td>string</td>
-									    <td>Name of the building</td>
-								  	</tr>
-								  	<tr>
-									    <td>number</td>
-									    <td>string</td>
-									    <td>Identifier for this building</td>
-								  	</tr>
-								  	<tr>
-									    <td>latitude</td>
-									    <td>decimal</td>
-									    <td>Latitude of this building</td>
-								  	</tr>
-								  	<tr>
-									    <td>longitude</td>
-									    <td>decimal</td>
-									    <td>Longitude of this building</td>
-								  	</tr>
-								  	<tr>
-									    <td>site</td>
-									    <td>field</td>
-									    <td>URL for the site in which this building is located in</td>
-								  	</tr>
-								  	<tr>
-									    <td>rooms</td>
-									    <td>field</td>
-									    <td>URL for the list of rooms located in this building</td>
-								  	</tr>
-								</table>
-						</figure>
+							</figure>
+						</section>
 
 						<section class="api-examples">
 							
 							<figure>
-								<figcaption>Example Request</figcaption>
+								<figcaption><h4>Example Request</h4></figcaption>
 
 								
-								<pre>PUT/PATCH http://comp3220.ecs.soton.ac.uk/buildings/190
+								<pre><code>PUT/PATCH http://comp3220.ecs.soton.ac.uk/buildings/190
 
 									{
 									    "name": "550 Burgess Road",
@@ -1112,14 +1168,14 @@
 									    "latitude": "15.670",
 									    "longitude": "-11.345",
 									    "site": "http://comp3220.ecs.soton.ac.uk/sites/4"
-									}</pre>
+									}</code></pre>
 							</figure>
 
 							<figure>
-								<figcaption>Example Response</figcaption>
+								<figcaption><h4>Example Response</h4></figcaption>
 
 								
-								<pre>200 OK
+								<pre><code>200 OK
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/buildings/190",
@@ -1129,12 +1185,10 @@
 									    "longitude": "-11.345",
 									    "site": "http://comp3220.ecs.soton.ac.uk/sites/4",
 									    "rooms": "http://comp3220.ecs.soton.ac.uk/buildings/190/rooms"
-									}</pre>
+									}</code></pre>
 							</figure>
 						</section>
 
-						
-						
 					</section>
 
 					<section class="endpoint">
@@ -1142,42 +1196,49 @@
 							<h3 id="delete-building">Remove building</h3>
 							<p><code>DELETE http://comp3220.ecs.soton.ac.uk/buildings/{buildings_id}</code></p>
 							<p>Remove a building</p>
-							<p>CURRENTLY NOT WORKING</p>
 						</header>
 
-						<div class="endpoint-description">
+						<section class="endpoint-description">
 							<figure>
-								<figcaption>URL Parameters</figcaption>
+								<figcaption><h4>Parameters</h4></figcaption>
 								<table>
 									<tr>
-									    <th>Parameter</th>
+									    <th>Name</th>
 									    <th>Type</th>
+									    <th>Location</th>
 									    <th>Description</th>
 							  		</tr>
 								  	<tr>
 									    <td>building_id</td>
 									    <td>integer</td>
+									    <td>URL</td>
 									    <td>Unique id for this building</td>
+								  	</tr>
+								  	<tr>
+								  		<td>Authorization</td>
+								  		<td>string</td>
+								  		<td>Header</td>
+								  		<td>Client's authorization token</td>
 								  	</tr>
 								</table>	
 							</figure>
 
-						</div>
+						</section>
 						
 
 						<section class="api-examples">
 							<figure>
-								<figcaption>Example Request</figcaption>
+								<figcaption><h4>Example Request</h4></figcaption>
 
 								
-								<pre>DELETE http://comp3220.ecs.soton.ac.uk/buildings/190</pre>
+								<pre><code>DELETE http://comp3220.ecs.soton.ac.uk/buildings/190</code></pre>
 							</figure>
 
 							<figure>
-								<figcaption>Example Response</figcaption>
+								<figcaption><h4>Example Response</h4></figcaption>
 
 								
-								<pre>204 No Content</pre>
+								<pre><code>204 No Content</code></pre>
 							</figure>
 						</section>
 					</section>
@@ -1195,25 +1256,27 @@
 							<p>Retrieve the information about a site</p>
 						</header>
 
-						<div class="endpoint-description">
+						<section class="endpoint-description">
 							<figure>
-								<figcaption>URL Parameters</figcaption>
+								<figcaption><h4>Parameters</h4></figcaption>
 								<table>
 									<tr>
 									    <th>Parameters</th>
 									    <th>Type</th>
+									    <th>Location</th>
 									    <th>Description</th>
 							  		</tr>
 								  	<tr>
 									    <td>site_id</td>
 									    <td>integer</td>
+									    <td>URL</td>
 									    <td>Unique id for a site</td>
 								  	</tr>
 								</table>	
 							</figure>
 
 							<figure>
-								<figcaption>Response Fields</figcaption>
+								<figcaption><h4>Response Fields</h4></figcaption>
 								<table>
 		  							<tr>
 									    <th>Field</th>
@@ -1222,7 +1285,7 @@
 							  		</tr>
 								  	<tr>
 									    <td>url</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for this site</td>
 								  	</tr>
 
@@ -1239,36 +1302,36 @@
 								  	</tr>
 								  	<tr>
 									    <td>buildings</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for the list of buildings located in this site</td>
 								  	</tr>
 								</table>
 							</figure>
-						</div>
+						</section>
 						
 
 						<section class="api-examples">
 							<figure>
-								<figcaption>Example Request</figcaption>
+								<figcaption><h4>Example Request</h4></figcaption>
 
 								
-								<pre>GET http://comp3220.ecs.soton.ac.uk/sites/4</pre>
+								<pre><code>GET http://comp3220.ecs.soton.ac.uk/sites/4</code></pre>
 							</figure>
 
 							
 
 							<figure>
-								<figcaption>Example Response</figcaption>
+								<figcaption><h4>Example Response</h4></figcaption>
 
 								
-								<pre>200 OK
+								<pre><code>200 OK
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/sites/4",
 									    "number": "1",
 									    "name": "Highfield Campus",
 									    "buildings": "http://comp3220.ecs.soton.ac.uk/sites/4/buildings"
-									}</pre>
+									}</code></pre>
 							</figure>
 							
 						</section>
@@ -1282,10 +1345,10 @@
 							<p>Retrieve the information of all sites</p>
 						</header>
 
-						<div class="endpoint-description">
+						<section class="endpoint-description">
 
 							<figure>
-								<figcaption>Response Fields</figcaption>
+								<figcaption><h4>Response Fields</h4></figcaption>
 
 								<p>The response will be a list of sites, each with the following fields: </p>
 								<table>
@@ -1296,7 +1359,7 @@
 							  		</tr>
 								  	<tr>
 									    <td>url</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for this site</td>
 								  	</tr>
 
@@ -1313,26 +1376,26 @@
 								  	</tr>
 								  	<tr>
 									    <td>buildings</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for the list of buildings located in this site</td>
 								  	</tr>
 								</table>
 							</figure>
-						</div>
+						</section>
 					
 						<section class="api-examples">
 							<figure>
-								<figcaption>Example Request</figcaption>
+								<figcaption><h4>Example Request</h4></figcaption>
 
 								
-								<pre>GET http://comp3220.ecs.soton.ac.uk/sites</pre>
+								<pre><code>GET http://comp3220.ecs.soton.ac.uk/sites</code></pre>
 							</figure>
 
 							<figure>
-								<figcaption>Example Response</figcaption>
+								<figcaption><h4>Example Response</h4></figcaption>
 
 								
-								<pre>200 OK
+								<pre><code>200 OK
 
 									[
 									    {
@@ -1355,7 +1418,7 @@
 									    },
 
 									    ...
-									]</pre>
+									]</code></pre>
 							</figure>
 						</section>
 					</section>
@@ -1367,8 +1430,27 @@
 							<p>Returns the list of buildings located within a specific site</p>
 						</header>
 
-						<figure>
-								<figcaption>Response Fields</figcaption>
+						<section class="endpoint-description">
+							<figure>
+								<figcaption><h4>Parameters</h4></figcaption>
+								<table>
+									<tr>
+									    <th>Name</th>
+									    <th>Type</th>
+									    <th>Location</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>site_id</td>
+									    <td>integer</td>
+									    <td>URL</td>
+									    <td>Unique id for a site</td>
+								  	</tr>
+								</table>	
+							</figure>
+
+							<figure>
+								<figcaption><h4>Response Fields</h4></figcaption>
 								<p>The response will be a list of buildings, each with the following fields:</p>
 
 								<table>
@@ -1379,7 +1461,7 @@
 							  		</tr>
 								  	<tr>
 									    <td>url</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for this building</td>
 								  	</tr>
 								  	<tr>
@@ -1404,53 +1486,49 @@
 								  	</tr>
 								</table>
 							</figure>
+						</section>
+						
 
-							<section class="api-examples">
-								<figure>
-									<hfigcapti</
-									</header>
-
-									
-									<pre>GET http://comp3220.ecs.soton.ac.uk/sites/1/buildings
-</pre>
-								</figure>
-
+						<section class="api-examples">
+							<figure>
+								<figcaption><h4>Example Request</h4></figcaption>
 								
+								<pre><code>GET http://comp3220.ecs.soton.ac.uk/sites/1/buildings</code></pre>
+							</figure>
 
-								<figure>
-									<heExamplefigcaption	</
+							
 
-									
-									<pre>200 OK
+							<figure>
+								<figcaption><h4>Example Response</h4></figcaption>	
+								<pre><code>200 OK
 
-										[
-										    {
-										        "url": "http://comp3220.ecs.soton.ac.uk/buildings/77",
-										        "name": "Winchester Temporary Facility",
-										        "number": "63P",
-										        "latitude": "51.065",
-										        "longitude": "-1.309"
-										    },
-										    {
-										        "url": "http://comp3220.ecs.soton.ac.uk/buildings/79",
-										        "name": "WSA Cycle store",
-										        "number": "63Z",
-										        "latitude": "51.065",
-										        "longitude": "-1.309"
-										    },
-										    {
-										        "url": "http://comp3220.ecs.soton.ac.uk/buildings/80",
-										        "name": "East Side",
-										        "number": "63A",
-										        "latitude": "51.066",
-										        "longitude": "-1.309"
-										    },
+									[
+									    {
+									        "url": "http://comp3220.ecs.soton.ac.uk/buildings/77",
+									        "name": "Winchester Temporary Facility",
+									        "number": "63P",
+									        "latitude": "51.065",
+									        "longitude": "-1.309"
+									    },
+									    {
+									        "url": "http://comp3220.ecs.soton.ac.uk/buildings/79",
+									        "name": "WSA Cycle store",
+									        "number": "63Z",
+									        "latitude": "51.065",
+									        "longitude": "-1.309"
+									    },
+									    {
+									        "url": "http://comp3220.ecs.soton.ac.uk/buildings/80",
+									        "name": "East Side",
+									        "number": "63A",
+									        "latitude": "51.066",
+									        "longitude": "-1.309"
+									    },
 
-										    ...
-										]
-</pre>
-								</figure>
-							</section>
+									    ...
+									]</code></pre>
+							</figure>
+						</section>
 					</section>
 
 					<section class="endpoint">
@@ -1460,14 +1538,49 @@
 							<p>Creates a new site</p>
 						</header>
 
-						<div class="endpoint-description">
+						<section class="endpoint-description">
 							<figure>
-								<figcaption>URL Parameters</figcaption>
-								<table></table>	
+								<figcaption><h4>Parameters</h4></figcaption>
+								<table>
+									<tr>
+									    <th>Name</th>
+									    <th>Type</th>
+									    <th>Location</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>Authorization</td>
+									    <td>string</td>
+									    <td>Header</td>
+									    <td>Client's authorization token</td>
+								  	</tr>
+								</table>	
 							</figure>
 
 							<figure>
-								<figcaption>Request Fields</figcaption>
+								<figcaption><h4>Request Fields</h4></figcaption>
+								<table>
+		  							<tr>
+									    <th>Field</th>
+									    <th>Type</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>number</td>
+									    <td>string</td>
+									    <td>Identifier for this site</td>
+								  	</tr>
+
+								  	<tr>
+									    <td>name</td>
+									    <td>string</td>
+									    <td>Name of this site</td>
+								  	</tr>
+								</table>
+							</figure>
+
+							<figure>
+								<figcaption><h4>Response Fields</h4></figcaption>
 								<table>
 		  							<tr>
 									    <th>Field</th>
@@ -1476,7 +1589,7 @@
 							  		</tr>
 								  	<tr>
 									    <td>url</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for this site</td>
 								  	</tr>
 
@@ -1493,69 +1606,41 @@
 								  	</tr>
 								  	<tr>
 									    <td>buildings</td>
-									    <td>field</td>
+									    <td>string</td>
 									    <td>URL for the list of buildings located in this site</td>
 								  	</tr>
 								</table>
 							</figure>
-
-							<figure>
-								<figcaption>Response Fields</figcaption>
-								<table>
-		  							<tr>
-									    <th>Field</th>
-									    <th>Type</th>
-									    <th>Description</th>
-							  		</tr>
-								  	<tr>
-									    <td>url</td>
-									    <td>field</td>
-									    <td>URL for this site</td>
-								  	</tr>
-
-								  	<tr>
-									    <td>number</td>
-									    <td>string</td>
-									    <td>Identifier for this site</td>
-								  	</tr>
-
-								  	<tr>
-									    <td>name</td>
-									    <td>string</td>
-									    <td>Name of this site</td>
-								  	</tr>
-								  	<tr>
-									    <td>buildings</td>
-									    <td>field</td>
-									    <td>URL for the list of buildings located in this site</td>
-								  	</tr>
-								</table>
-							</figure>
-						</div>
+						</section>
 						
 
 						<section class="api-examples">
 							<figure>
-								<figcaption>Example Request</figcaption>
+								<figcaption><h4>Example Request</h4></figcaption>
 
 								
-								<pre>POST http://comp3220.ecs.soton.ac.uk/sites/</pre>
+								<pre><code>POST http://comp3220.ecs.soton.ac.uk/sites/
+
+									{
+									    "number": "360",
+									    "name": "360 Laboratory",
+									}</code></pre>
 							</figure>
 
 							
 
 							<figure>
-								<figcaption>Example Response</figcaption>
+								<figcaption><h4>Example Response</h4></figcaption>
 
 								
-								<pre>201 Created
+								<pre><code>201 Created
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/sites/15",
 									    "number": "360",
 									    "name": "360 Laboratory",
 									    "buildings": "http://comp3220.ecs.soton.ac.uk/sites/15/buildings"
-									}</pre>
+									}</code></pre>
 							</figure>
 							
 						</section>
@@ -1569,118 +1654,123 @@
 							<p><code>PATCH http://comp3220.ecs.soton.ac.uk/sites/{site_id}</code></p>
 
 							<p>There are two methods that can be used to update the information for a site: <code>PUT</code> and <code>PATCH</code>.
-								<code>PUT</code> requires all of the information stated in the Request Fields to be present, while <code>PATCH</code> does not require all of stated in the Request Fields to be present.
+								<code>PUT</code> requires all of the information stated in the Request Fields to be present, while <code>PATCH</code> does not require all of stated fields. In both cases, the format for Parameters, Request Fields and Response Fields are the same. 
 							</p>
 						</header>
 
-						<p>In both cases, the format for URL parameters, Request Fields and Response Fields are the same</p>
-
-						<figure>
-							<figcaption>URL Parameters</figcaption>
-							<table>
-								<tr>
-								    <th>Parameters</th>
-								    <th>Type</th>
-								    <th>Description</th>
-						  		</tr>
-							  	<tr>
-								    <td>site_id</td>
-								    <td>integer</td>
-								    <td>Unique id for a site</td>
-							  	</tr>
-							</table>	
-						</figure>
-
-						<figure>
-							<figcaption>Request Fields</figcaption>
-							<table>
-		  							<tr>
-									    <th>Field</th>
-									    <th>Type</th>
-									    <th>Description</th>
-							  		</tr>
-								  	<tr>
-									    <td>url</td>
-									    <td>field</td>
-									    <td>URL for this site</td>
-								  	</tr>
-
-								  	<tr>
-									    <td>number</td>
-									    <td>string</td>
-									    <td>Identifier for this site</td>
-								  	</tr>
-
-								  	<tr>
-									    <td>name</td>
-									    <td>string</td>
-									    <td>Name of this site</td>
-								  	</tr>
-								  	<tr>
-									    <td>buildings</td>
-									    <td>field</td>
-									    <td>URL for the list of buildings located in this site</td>
-								  	</tr>
-								</table>
-						</figure>
-
-						<figure>
-							<figcaption>Response Fields</figcaption>
-							
-							<p>The response will be a list of sites, each with the following fields: </p>
-							<table>
-		  							<tr>
-									    <th>Field</th>
-									    <th>Type</th>
-									    <th>Description</th>
-							  		</tr>
-								  	<tr>
-									    <td>url</td>
-									    <td>field</td>
-									    <td>URL for this site</td>
-								  	</tr>
-
-								  	<tr>
-									    <td>number</td>
-									    <td>string</td>
-									    <td>Identifier for this site</td>
-								  	</tr>
-
-								  	<tr>
-									    <td>name</td>
-									    <td>string</td>
-									    <td>Name of this site</td>
-								  	</tr>
-								  	<tr>
-									    <td>buildings</td>
-									    <td>field</td>
-									    <td>URL for the list of buildings located in this site</td>
-								  	</tr>
-								</table>
-						</figure>
-
-						<section class="api-examples">
+						<section class="endpoint-description">
 							<figure>
-								<figcaption>Example Request</figcaption>
-
-								
-								<pre>PUT/PATCH http://comp3220.ecs.soton.ac.uk/sites/15</pre>
+								<figcaption><h4>Parameters</h4></figcaption>
+								<table>
+									<tr>
+									    <th>Parameters</th>
+									    <th>Type</th>
+									    <th>Location</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>site_id</td>
+									    <td>integer</td>
+									    <td>URL</td>
+									    <td>Unique id for a site</td>
+								  	</tr>
+								  	<tr>
+									    <td>Authorization</td>
+									    <td>string</td>
+									    <td>Header</td>
+									    <td>Client's authorization token</td>
+								  	</tr>
+								</table>	
 							</figure>
 
-							
+							<figure>
+								<figcaption><h4>Request Fields <sup>*</sup></h4></figcaption>
+								<table>
+		  							<tr>
+									    <th>Field</th>
+									    <th>Type</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>number</td>
+									    <td>string</td>
+									    <td>Identifier for this site</td>
+								  	</tr>
+
+								  	<tr>
+									    <td>name</td>
+									    <td>string</td>
+									    <td>Name of this site</td>
+								  	</tr>
+								</table>
+
+								<footer>
+									*The request fields are mandatory for PUT requests only.
+								</footer>
+							</figure>
 
 							<figure>
-								<figcaption>Example Response</figcaption>
+								<figcaption><h4>Response Fields</h4></figcaption>
+								
+								<p>The response will be a list of sites, each with the following fields: </p>
+								<table>
+		  							<tr>
+									    <th>Field</th>
+									    <th>Type</th>
+									    <th>Description</th>
+							  		</tr>
+								  	<tr>
+									    <td>url</td>
+									    <td>string</td>
+									    <td>URL for this site</td>
+								  	</tr>
+
+								  	<tr>
+									    <td>number</td>
+									    <td>string</td>
+									    <td>Identifier for this site</td>
+								  	</tr>
+
+								  	<tr>
+									    <td>name</td>
+									    <td>string</td>
+									    <td>Name of this site</td>
+								  	</tr>
+								  	<tr>
+									    <td>buildings</td>
+									    <td>string</td>
+									    <td>URL for the list of buildings located in this site</td>
+								  	</tr>
+								</table>
+							</figure>
+						</section>
+						
+						<section class="api-examples">
+							<figure>
+								<figcaption><h4>Example Request</h4></figcaption>
 
 								
-								<pre>200 OK
+								<pre><code>PUT/PATCH http://comp3220.ecs.soton.ac.uk/sites/15
+
+									{
+									    "number": 361,
+									    "name": "361 Laboratory"
+									}
+								</code></pre>
+							</figure>
+
+							<figure>
+								<figcaption><h4>Example Response</h4></figcaption>
+
+								
+								<pre><code>200 OK
 
 									{
 									    "url": "http://comp3220.ecs.soton.ac.uk/sites/15",
 									    "number": "361",
 									    "name": "361 Laboratory",
 									    "buildings": "http://comp3220.ecs.soton.ac.uk/sites/15/buildings"
-									}</pre>
+									}</code></pre>
 							</figure>
 						</section>
 					</section>
@@ -1692,42 +1782,47 @@
 							<p>Delete a site</p>
 						</header>
 
-						<div class="endpoint-description">
+						<section class="endpoint-description">
 							<figure>
-								<figcaption>URL Parameters</figcaption>
+								<figcaption><h4>Parameters</h4></figcaption>
 								<table>
 									<tr>
 									    <th>Parameter</th>
 									    <th>Type</th>
+									    <th>Location</th>
 									    <th>Description</th>
+							  		</tr>
+							  		<tr>
+							  			<td>Authorization</td>
+							  			<td>string</td>
+							  			<td>Header</td>
+							  			<td>Client's authorization token</td>
 							  		</tr>
 								  	<tr>
 									    <td>site_id</td>
 									    <td>integer</td>
+									    <td>URL</td>
 									    <td>Unique id for this site</td>
 								  	</tr>
 								</table>	
 							</figure>
-						</div>
+						</section>
 						
 
 						<section class="api-examples">
 							<figure>
-								<figcaption>Example Request</figcaption>
+								<figcaption><h4>Example Request</h4></figcaption>
 
 								
-								<pre>DELETE http://comp3220.ecs.soton.ac.uk/sites/15</pre>
+								<pre><code>DELETE http://comp3220.ecs.soton.ac.uk/sites/15</code></pre>
 							</figure>
-
-							
 
 							<figure>
-								<figcaption>Example Response</figcaption>
+								<figcaption><h4>Example Response</h4></figcaption>
 
 								
-								<pre>204 No Content</pre>
+								<pre><code>204 No Content</code></pre>
 							</figure>
-
 						</section>
 						
 					</section>
@@ -1744,9 +1839,9 @@
 							<h3 id="option-content">Accepted Content Types</h3>
 						</header>
 
-						<p>For each type of resource (room, building or site), the content type for both the request and Response Fields are the same: <code>application/xml</code>, <code>application/json</code> for parsing at the server side, and <code>application/xml</code>, <code>application/json</code>, <code>text/csv</code> for rendering at the client side.</p>
+						<p>For each type of resource (room, building or site), the content type for both the request and response fields are the same: <code>application/xml</code>, <code>application/json</code> for parsing at the server side, and <code>application/xml</code>, <code>application/json</code>, <code>text/csv</code> for rendering at the client side.</p>
 
-						<p>The following API endpoints can be used as a reference to obtain the accepted content types for the different type of resources</p>
+						<p>The following API endpoints can be used as a reference to obtain the accepted content types (for parsing and rendering) for the different type of resources.</p>
 						<ul>
 							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/rooms/</code></li>
 							<li><code>OPTION http://comp3220.ecs.soton.ac.uk/rooms/{room_id}</code></li>
@@ -1764,7 +1859,7 @@
 							<h3 id="option-action">Details on updating resources</h3>
 						</header>
 
-						<p>The following API endpoints can be used as a reference to obtain further information about the details of a Request Fields while sending <code>PUT</code> or <code>PATCH</code> requests to the server for updating building and site resources. This information can be found in the <code>actions</code> key/element in each of the following endpoints' Response Fields.</p>
+						<p>The following API endpoints can be used as a reference to obtain further constraints about the request fields that the client needs to conform to while sending <code>PUT</code> or <code>PATCH</code> requests to the server.
 
 						<h4 id="update-building-details">Buildings</h4>
 						<ul>
@@ -1787,53 +1882,71 @@
 					<h2>Debugging Errors</h2>
 				</header>
 
-				<section>
+				<section class="error-code">
 					<header>
 						<h3 id="400">400 Bad Request</h3>
 					</header>
 
-					<section>
+					<p>This error occurs while there is an incomplete Request Fields or an invalid Request Fields where the field type, field value or format of the Request Fields is invalid. This applies to <code>POST</code>, <code>PUT</code> or <code>PATCH</code> requests when updating a resource.</p>
+
+					<section class="error-cause">
 						<header>
-							<p>Error Description</p>
+							<h4>Incomplete Request Fields</h4>
 						</header>
 
-						<p>This error occurs while there is an incomplete Request Fields or an invalid Request Fields where the field type, field value or format of the Request Fields is invalid. This applies to <code>POST</code>, <code>PUT</code> or <code>PATCH</code> requests when updating a resource.
-						<h4>Incomplete <code>PUT</code> request</h4>
-						<p>Check the Response Fields for the relevant endpoint where it describes the required fields that is needed, and add any missing fields</p>
-
-						<h4>Invalid request</h4>
-						<p>Check the Request Fields for the relevant endpoint where it describes the types and values of the request fields, and the format of the Request Fields needed. Ensure that your Request Fields conforms to the format described in the relevant endpoint</p>
-					</section>
-
-					<section class="api-examples">
-						<header>
-							<p>Example Errors</p>
-						</header>
+						<p>Check the response body where it describes the required fields, and add any missing fields yo your request body.</p>
 
 						<figure>
-							<figcaption>Incomplete Request Fields</figcaption>
-							
-							<pre>400 Bad Request
+							<figcaption><h4>Example Request</h4></figcaption>
+
+							<pre><code>POST http://comp3220.ecs.soton.ac.uk/rooms
+
 								{
-								    "building": [
-								        "This field is required."
-								    ],
+								    "number": "200-3220"
+								    "building": "http://comp3220.ecs.soton.ac.uk/buildings/187"
+								    <span>[missing capacity]</span>,
+								    <span>[missing description]</span>
+								}</code></pre>
+
+						</figure>
+						<figure>		
+							<figcaption><h4>Example Response</h4></figcaption>					
+							<pre><code>400 Bad Request
+
+								{
 								    "capacity": [
-								        "This field is required."
-								    ],
-								    "number": [
 								        "This field is required."
 								    ],
 								    "description": [
 								        "This field is required."
 								    ]
-								</pre>
+								}</code></pre>
+						</figure>
+					</section>
+
+					<section class="error-cause">
+						<header>
+							<h4>Invalid Request Fields</h4>
+						</header>
+
+						<p>Check the Request Fields for the relevant endpoint where it describes the types and values of the request fields, and the format of the Request Fields needed. Ensure that your Request Fields conforms to the format described in the relevant endpoint</p>
+
+						<figure>		
+							<figcaption><h4>Example Request</h4></figcaption>	
+							<pre><code>POST http://comp3220.ecs.soton.ac.uk/rooms
+
+								{
+								    "number": "200-3220"
+								    "description": "CLS for ECS students",
+								    "building": 24, <span>[building should be a URL string]</span>
+								    "capacity": 44.6 <span>[capacity should be an integer]</span>
+								}</code></pre>			
 						</figure>
 
 						<figure>
-							<figcaption>Invalid Request Fields</figcaption>
-							
-							<pre>400 Bad Request
+							<figcaption><h4>Example Response</h4></figcaption>
+
+							<pre><code>400 Bad Request
 
 								{
 								    "building": [
@@ -1842,132 +1955,85 @@
 								    "capacity": [
 								        "A valid integer is required."
 								    ]
-								</pre>
-
-							
-							<pre>400 Bad Request
-
-								{
-								    "building": [
-								        "Invalid hyperlink - No URL match."
-								    ]
-								</pre>
+								
+							}</code></pre>
 						</figure>
 					</section>
+
 				</section>
 
-				<section>
+				<section class="error-code">
 					<header>
 						<h3 id="401">401 Unauthorized</h3>
 					</header>
 
-					<section>
-						<header>
-							<p>Error Description</p>
-						</header>
+					<p>This error occurs when there is a missing authorization token in the request headers when performing requests changes the state of a given resource such as <code>POST</code>, <code>PUT</code>, <code>PATCH</code> and <code>DELETE</code>. To fix this, simply add the authorization token in the header when creating, updating or deleting a resource:</p>
 
-						<p>This error occurs when there is a missing authorization token in the request headers when performing requests changes the state of a given resource such as <code>POST</code>, <code>PUT</code>, <code>PATCH</code> and <code>DELETE</code>.</p>
+					<p><code>Authorization: Token &lt;token_id&gt;</code></p>
 
-						<p>To fix this, simply add the following authorization header when creating, updating or deleting a resource:</p>
+					<figure>
+							<figcaption><h4>Example Response</h4></figcaption>
+							
+							<pre><code>401 Unauthorized
 
-						<p><code>Authorization: Token &lttoken_id&gt</code></p>
-					</section>
-
-					<section class="api-examples">
-						<header>
-							<p>Example Errors</p>
-						</header>
-						<figure>
-								<figcaption>Unauthorized Requests</figcaption>
-								
-								<pre>401 Unauthorized
-
-									{
-									    "detail": "Authentication credentials were not provided."
-									}</pre>
-						</figure>
-					</section>
+								{
+								    "detail": "Authentication credentials were not provided."
+								}</code></pre>
+					</figure>
 
 				</section>
 
-				<section>
+				<section class="error-code">
 					<header>
 						<h3 id="404">404 Not Found</h3>
 					</header>
 
-					<section>
-						<header>
-							<p>Error Description</p>
-						</header>
+					<p>This error occurs when the requested resource does not exist. Ensure that the resource requested exists within the server.</p>
 
-						<p>This error occurs when invalid URL parameters are used or that the requested resource does not exist.</p>
+					<figure>
+						<figcaption>
+							<h4>Example Request</h4>
+						</figcaption>
 
-						<h4>Invalid URL Parameters</h4>
-						<p>For the relevant endpoint, check the type of URL parameters used or whether URL parameters should be used at all.</p>
+						<pre><code> GET http://comp3220.ecs.soton.ac.uk/rooms/800 <span>[room_id of 800 does not exist]</span></code></pre>
+					</figure>
+					<figure>
+						<figcaption><h4>Example Response</h4></figcaption>
+						
+						<pre><code>404 Not Found
 
-						<h4>Resource does not exist</h4>
-						<p>Ensure that the resource requested exists within the server.</p>
-
-					</section>
-
-					<section class="api-examples">
-						<header>
-							<p>Example Errors</p>
-						</header>
-						<figure>
-								<figcaption>Invalid URL Parameters</figcaption>
-								
-								<pre>404 Not Found
-
-									&lth1&gtNot Found&lt/h1&gt
-									&ltp&gtThe requested URL /rooms/inavalidparam was not found on this server. &lt/p&gt</pre>
-						</figure>
-
-						<figure>
-								<figcaption>Resource does not exist</figcaption>
-								
-								<pre>404 Not Found
-
-									{
-									    "detail": "Not Found."
-									}</pre>
-						</figure>
-					</section>
+							{
+							    "detail": "Not Found."
+							}</code></pre>
+					</figure>
 				</section>
 
-				<section>
+				<section class="error-code">
 					<header>
 						<h3 id="405">405 Method Not Allowed</h3>
 					</header>
 
-					<section>
-						<header>
-							<p>Error Description</p>
-						</header>
+					<p>This error occurs when the URL template for a request action on a specific endpoint is invalid. Ensure that all required URL parameters are provided for <code>PUT</code>, <code>PATCH</code> and <code>DELETE</code> requests.
 
-						<p>This error occurs when the URL template for a request action on a specific endpoint is invalid. Ensure that all required URL parameters are provided for <code>PUT</code>, <code>PATCH</code> and <code>DELETE</code> requests.
-					</section>
+					<figure>
+						<figcaption><h4>Example Request</h4></figcaption>						
+						<pre><code>{
+							    DELETE http://comp3220.ecs.soton.ac.uk/rooms/<span>[missing room_id]</span>
+							}</code></pre>
+					</figure>
 
-					<section class="api-examples">
-						<header>
-							<p>Example Errors</p>
-						</header>
-						<figure>
-								<figcaption>Invalid URL Parameters</figcaption>
-								
-								<pre>{
-									    "detail": "Method \"DELETE\" not allowed."
-									}</pre>
-						</figure>
-					</section>
+					<figure>
+						<figcaption><h4>Example Response</h4></figcaption>
+						
+						<pre><code>{
+							    "detail": "Method \"DELETE\" not allowed."
+							}</code></pre>
+					</figure>
 				</section>
 			</article>
 			
 		</main>
 	</div>
 	
-
-	
-
 </body>
 </html>

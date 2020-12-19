@@ -1,14 +1,15 @@
-/* document structure */
+/* OVERALL DOCUMENT STRUCTURE */
 
-html, body, h1{
+html, body{
 	margin: 0px;
 	padding: 0px;
-	height: 100%;
 	overflow-x: hidden;
+	font-family: 'Source Code Pro', monospace;
+	font-size: 12pt;
+	background-color: #edeff0;
 }
 
 #header {
-	z-index: 2;
 	width: 100%;
 	background-color: #edeff0;
 	padding-left: 10%;
@@ -17,67 +18,81 @@ html, body, h1{
 	box-shadow: 4px 4px 10px grey;
 }
 
+#rooms, #buildings, #sites {
+	font-size: 20pt;
+}
+
 .wrapper {
 	display: flex;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 	align-items: start;
-	margin-top: 1px;
 }
 
+
+/* NAVIGATIONS */
+
+/* flex item 1*/
 nav {
-	padding: 20px;
+	padding: 25px;
 	color: #d6d6d6;
 	flex: 1.5;
 	height: 100vh;
 	background-color: #3e474f;
 	overflow-y: auto;
-}
-
-main {
-	padding: 20px;
-	flex: 4;
-	overflow-y: auto;
-	height: 100vh;
-}
-
-figure {
-	margin-left: 0px;
-	margin-right: 0px;
-}
-
-
-#rooms, #buildings, #sites {
-	font-size: 24pt;
+	box-shadow: 0px 0px 10px grey;
 }
 
 nav h2 {
 	font-size: 24pt;
 }
-/* typography */
 
-body {
-	font-family: 'Source Code Pro', monospace;
-	background-color: #edeff0;
+/* MAIN CONTENT */
+
+/* flex item 2*/
+main {
+	padding: 25px;
+	flex: 4;
+	overflow-y: auto;
+	height: 100vh;
 }
 
-code {
-	padding: 3px;
-	font-size: 11pt;
-	font-family: 'Source Code Pro', monospace;
-	background-color: #f6f7f9;
-	overflow-x: auto;
-}
 
-/* code block formatting */
+/* CODE FORMATTING */
 pre {
 	padding: 15px;
 	color: #d6d6d6;
 	background-color: #2e2e2e;
-	tab-size: 0;
 	font-size: 11pt;
 	overflow-x: auto;
+	tab-size: 0;
+}
+
+/* inline code */
+code {
+	background-color: #f6f7f9;
+	font-family: 'Source Code Pro', monospace;
+}
+
+/* block code */
+figure code {
+	padding: 3px;
+	font-size: 11pt;
+	font-family: 'Source Code Pro', monospace;
+	overflow-x: auto;
+	display: block;
+	background-color: #2e2e2e;
+}
+
+span {
+	color: #f56a79;
+}
+
+/* FIGURES */
+figure {
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
 figcaption {
@@ -85,10 +100,7 @@ figcaption {
 	font-weight: bold;
 }
 
-.endpoint {
-	border-bottom: 3px solid grey;
-}
-/* table formatting */
+/* TABLE FORMATTING */
 
 table {
   table-layout: fixed;
@@ -98,6 +110,7 @@ table {
   overflow-x: scroll;
 }
 
+/* zebra striping for table rows */
 tr:nth-child(even) {
 	background-color: #f6f7f9;
 }
@@ -107,14 +120,17 @@ th, td {
 	padding: 10px;
 }
 
-/* links */
+/* LINKS  */
+
+
 a {
   outline: none;
   text-decoration: none;
+  padding: 1px;
 }
 
 a:link {
-  color: #265301;
+  color: #d6d6d6;
 }
 
 a:visited {
@@ -136,3 +152,42 @@ a:active {
   border-bottom: 3px solid #d6d6d6;
 }
 
+
+/* MISC */
+
+h1 {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+
+article header h2 {
+	font-size: 24pt;
+}
+
+sup {
+	font-size: 10pt;
+	color: #f56a79;
+	font-weight: bold;
+}
+
+footer {
+	color: red;
+	font-weight: bold;
+	margin-top: 10px;
+	font-size: 9pt;
+}
+
+li {
+	margin-bottom: 5px;
+}
+
+/* Horizontal line separating each endpoint section */
+.endpoint {
+	border-bottom: 3px solid grey;
+}
+
+/* Horizontal line separating each error code section */
+.error-code {
+	border-bottom: 3px solid grey;
+}
