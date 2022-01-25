@@ -12,10 +12,12 @@ html, body{
 #header {
 	width: 100%;
 	background-color: #edeff0;
-	padding-left: 10%;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-left: 2%;
 	box-shadow: 4px 4px 10px grey;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	height: 70px;
 }
 
 #rooms, #buildings, #sites {
@@ -24,10 +26,19 @@ html, body{
 
 .wrapper {
 	display: flex;
-	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 70px;
 	align-items: start;
+	height: 100%;
+}
+
+.wrapper>*{
+	flex: 1;
+}
+
+.wrapper>nav {
+	flex: 0.25;
 }
 
 
@@ -35,29 +46,49 @@ html, body{
 
 /* flex item 1*/
 nav {
-	padding: 25px;
+	position: fixed;
+	width: 300px;
 	color: #d6d6d6;
-	flex: 1.5;
-	height: 100vh;
+	top: 0;
+	bottom: 0;
 	background-color: #3e474f;
-	overflow-y: auto;
+	margin-top: 70px;
+	overflow-y: scroll;
+	padding: 12px;
+	padding-left: 2%;
 	box-shadow: 0px 0px 10px grey;
 }
 
 nav h2 {
-	font-size: 24pt;
+	font-size: 12pt;
+}
+
+nav li {
+	font-size: 10pt;
+}
+nav>ul>li>ul{
+	list-style: none;
+	margin-left: -24px;
 }
 
 /* MAIN CONTENT */
 
 /* flex item 2*/
 main {
-	padding: 25px;
-	flex: 4;
-	overflow-y: auto;
-	height: 100vh;
+	padding: 0 24px; 
+	height: 100%;
+	margin-left: 334px;
+	overflow-x: scroll;
 }
 
+section header h3 {
+	scroll-margin-top: 70px;
+}
+
+
+section h2 {
+	scroll-margin-top: 70px;
+}
 
 /* CODE FORMATTING */
 pre {
@@ -103,11 +134,8 @@ figcaption {
 /* TABLE FORMATTING */
 
 table {
-  table-layout: fixed;
-  width: 100%;
   border-collapse: collapse;
   border: 2px solid black;
-  overflow-x: scroll;
 }
 
 /* zebra striping for table rows */
@@ -154,15 +182,12 @@ a:active {
 
 
 /* MISC */
-
-h1 {
-	margin: 0px;
-	padding: 0px;
-	height: 100%;
-}
-
 article header h2 {
 	font-size: 24pt;
+}
+
+article header {
+	margin-top: 12px;
 }
 
 sup {
